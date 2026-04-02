@@ -100,3 +100,10 @@ img {
   border-radius: 10px;
   background: linear-gradient(90deg, #18743b 0%, #2dda6f 100%);
 }
+
+.text-gradient-green {
+  background: linear-gradient(90deg, #30c859 0%, #9ce437 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

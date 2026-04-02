@@ -3,36 +3,66 @@
 import { useRef } from "react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Heading } from "@/components/ui/Heading";
-import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { useScroll } from "@/hooks/useScroll";
 import { testimonials } from "@/lib/constants";
+import { Star } from "lucide-react";
+import clsx from "clsx";
 
 export const TestimonialsSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useScroll(ref);
 
   return (
-    <Section
-      id="testimonials"
-      className="bg-[var(--surface)] dark:bg-[var(--surface-2)]"
-    >
+    <Section id="testimonials" className="bg-[var(--surface)]">
       <Container>
-        <div className="mb-8 text-center">
-          <Heading
-            title="What Clients Say"
-            subtitle="Real reviews from clients who scaled with us."
-          />
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-black md:text-5xl text-[var(--foreground)]">
+            What Clients <span className="text-emerald-500">Say</span>
+          </h2>
         </div>
 
         <div
           ref={ref}
-          className={`grid gap-5 sm:grid-cols-2 xl:grid-cols-3 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          } transition-all duration-700`}
+          className={clsx(
+            "grid gap-6 md:grid-cols-2",
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10",
+            "transition-all duration-700",
+          )}
         >
-          {testimonials.map((item) => (
-            <TestimonialCard key={item.id} {...item} />
+          {testimonials.map((item, index) => (
+            <div
+              key={item.id}
+              className={clsx(
+                "rounded-xl bg-white p-6 border shadow-[var(--shadow-sm)] ",
+                index === 2 && "md:col-span-2",
+              )}
+            >
+              <div className="mb-3 flex gap-1 text-yellow-400">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={16} fill="currentColor" />
+                ))}
+              </div>
+
+              <p className="text-sm text-slate-600 leading-relaxed">
+                {item.quote}
+              </p>
+
+              <div className="mt-4 flex items-center gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-xs font-bold text-white">
+                  {item.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">
+                    {item.name}
+                  </p>
+                  <p className="text-xs text-slate-500">
+                    Freelancer • Top Client
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </Container>

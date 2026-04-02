@@ -1,114 +1,105 @@
-import {
-  Globe2,
-  GitBranch,
-  Link2,
-  Share2,
-} from "lucide-react";
+"use client";
+
+import { Globe2, GitBranch, Link2, Share2, Link } from "lucide-react";
+import { OptimizedImage } from "./OptimizedImage";
 
 export const SITE_CONFIG = {
-  name: "DevoySoftTech",
+  name: "Devoy",
+  tagline: "DESIGN | DEVELOP | DEPLOY",
   description:
-    "Modern SaaS product experiences with performance-driven engineering and design.",
+    "Creative IT services company helping businesses grow digitally from Jaipur, Rajasthan since 2017.",
   contact: {
-    email: "inbox@devoysofttech.com",
-    phone: "+91 90521 02214",
+    email: "info@devoysofttech.com",
+    phone: "+91 96023 20214",
     location: "Jaipur, Rajasthan",
   },
-  links: [
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" },
-  ],
+  services: ["Web Development", "Mobile Apps", "E-Commerce", "SEO"],
+  company: ["About Us", "Portfolio", "Contact"],
   social: [
-    {
-      label: "Website",
-      href: "#",
-      icon: Globe2,
-    },
-    {
-      label: "LinkedIn",
-      href: "#",
-      icon: Link2,
-    },
-    {
-      label: "GitHub",
-      href: "#",
-      icon: GitBranch,
-    },
-    {
-      label: "Share",
-      href: "#",
-      icon: Share2,
-    },
+    { label: "Website", icon: Globe2 },
+    { label: "LinkedIn", icon: Link2 },
+    { label: "GitHub", icon: GitBranch },
+    { label: "Share", icon: Share2 },
   ],
 };
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--surface)] py-10">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 sm:px-6 md:grid-cols-3">
-        {/* Brand */}
-        <div>
-          <h4 className="text-lg font-black text-slate-900 dark:text-white">
-            {SITE_CONFIG.name}
-          </h4>
-          <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-            {SITE_CONFIG.description}
-          </p>
-          <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">
-            © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights
-            reserved.
-          </p>
-        </div>
+    <footer className="bg-[var(--foreground)] text-white">
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+          {/* LOGO + DESC */}
+          <div>
+             <div className="flex items-center">
+            <Link href="/" aria-label="DevoySoftTech logo">
+              <OptimizedImage
+                src="/images/logo.png"
+                alt="Logo"
+                fill={false}
+                containerClassName="w-[164px] h-auto"
+                priority
+              />
+            </Link>
+            </div>
 
-        {/* Links */}
-        <div>
-          <h5 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
-            Links
-          </h5>
-          <ul className="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-300">
-            {SITE_CONFIG.links.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="hover:text-emerald-500 transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+            <p className="mt-4 text-sm text-emerald-100 leading-relaxed">
+              {SITE_CONFIG.description}
+            </p>
 
-        {/* Contact */}
-        <div>
-          <h5 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
-            Contact
-          </h5>
-          <address className="mt-3 not-italic text-sm text-slate-600 dark:text-slate-300">
-            {SITE_CONFIG.contact.email}
-            <br />
-            {SITE_CONFIG.contact.phone}
-            <br />
-            {SITE_CONFIG.contact.location}
-          </address>
+            {/* SOCIAL */}
+            <div className="mt-5 flex gap-3">
+              {SITE_CONFIG.social.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.label}
+                    className="flex h-9 w-9 items-center justify-center rounded-md bg-white/10 hover:bg-white/20 transition"
+                  >
+                    <Icon size={16} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
-          {/* Social Icons */}
-          <div className="mt-4 flex items-center gap-3 text-slate-600 dark:text-slate-300">
-            {SITE_CONFIG.social.map((item) => {
-              const Icon = item.icon;
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  aria-label={item.label}
-                  className="hover:text-emerald-500 transition-colors"
-                >
-                  <Icon size={18} />
-                </a>
-              );
-            })}
+          {/* SERVICES */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-[var(--highlight)]">
+              Services
+            </h4>
+            <ul className="mt-4 space-y-2 text-sm text-emerald-100">
+              {SITE_CONFIG.services.map((item) => (
+                <li key={item} className="hover:text-white transition">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* COMPANY */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-[var(--highlight)]">
+              Company
+            </h4>
+            <ul className="mt-4 space-y-2 text-sm text-emerald-100">
+              {SITE_CONFIG.company.map((item) => (
+                <li key={item} className="hover:text-white transition">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CONTACT */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-[var(--highlight)]">
+              Contact
+            </h4>
+            <div className="mt-4 space-y-2 text-sm text-emerald-100">
+              <p>{SITE_CONFIG.contact.email}</p>
+              <p>{SITE_CONFIG.contact.phone}</p>
+              <p>{SITE_CONFIG.contact.location}</p>
+            </div>
           </div>
         </div>
       </div>

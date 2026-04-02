@@ -1,28 +1,28 @@
 "use client";
 
-import { type ReactNode, useRef } from "react";
+import { useRef } from "react";
 import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
-import { Heading } from "@/components/ui/Heading";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { useScroll } from "@/hooks/useScroll";
 import { services } from "@/lib/constants";
 import {
   Code2,
+  Smartphone,
   LayoutDashboard,
   ShoppingCart,
   TrendingUp,
   Users,
+  ArrowRight,
 } from "lucide-react";
+import clsx from "clsx";
+import { Section } from "../ui/Section";
 
-const iconMap: Record<string, ReactNode> = {
-  code: <Code2 size={24} />,
-  smartphone: <Code2 size={24} />,
-  layout: <LayoutDashboard size={24} />,
-  "shopping-cart": <ShoppingCart size={24} />,
-  "trending-up": <TrendingUp size={24} />,
-  users: <Users size={24} />,
+const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
+  code: Code2,
+  smartphone: Smartphone,
+  layout: LayoutDashboard,
+  "shopping-cart": ShoppingCart,
+  "trending-up": TrendingUp,
+  users: Users,
 };
 
 export const ServicesSection = () => {
@@ -30,36 +30,64 @@ export const ServicesSection = () => {
   const isVisible = useScroll(ref);
 
   return (
-    <Section id="services">
+    <Section id="services" className="bg-[var(--surface)]">
       <Container>
-        <div className="mb-8 flex flex-col items-center gap-3 text-center">
-          <Heading
-            title="Services We Provide"
-            subtitle="Premium services engineered for B2B SaaS, marketplaces, and scale-ups."
-          />
-          <Button variant="ghost">View All Services</Button>
-        </div>
+        <div>
+          <div className="mb-12 flex items-center justify-between">
+            <h2 className="text-3xl font-black md:text-4xl text-[var(--foreground)]">
+              Services We <span className="text-[var(--accent)]">Provide</span>
+            </h2>
 
-        <div
-          ref={ref}
-          className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-700`}
-        >
-          {services.map((service) => (
-            <Card
-              key={service.id}
-              className="group hover:shadow-xl focus-within:shadow-xl"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-300 transition-transform duration-300 group-hover:-translate-y-1">
-                {iconMap[service.icon]}
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                {service.description}
-              </p>
-            </Card>
-          ))}
+            <button className="hidden items-center gap-2 rounded-lg btn-gradient px-5 py-2 text-sm font-medium text-white md:flex">
+              View All Service
+              <ArrowRight size={16} />
+            </button>
+          </div>
+
+          <div
+            ref={ref}
+            className={clsx(
+              "grid gap-6 sm:grid-cols-2 lg:grid-cols-3",
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8",
+              "transition-all duration-700",
+            )}
+          >
+            {services.map((service) => {
+              const Icon = iconMap[service.icon];
+
+              return (
+                <div
+                  key={service.id}
+                  className="
+                  rounded-2xl 
+                  bg-white 
+                  p-6 
+                  transition 
+                  hover:shadow-md
+                "
+                >
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                    <Icon size={18} />
+                  </div>
+                  {/* TITLE */}
+                  <h3 className="text-base font-semibold text-slate-900">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-4 cursor-pointer flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700">
+                    Learn More
+                    <ArrowRight size={14} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </Container>
     </Section>
