@@ -11,24 +11,26 @@ const items = [
   "Laravel & React",
   "Flutter Apps",
   "Dedicated Developers",
-//   "Logo & Branding",
-//   "WordPress",
 ];
 
 export const ServicesTicker = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-white dark:bg-[#111827] overflow-hidden">
       <Container>
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 py-4 text-[11px] font-semibold uppercase tracking-wider text-slate-600">
-          {items.map((item, index) => (
-            <div key={item} className="flex items-center gap-2">
-              <span className="h-1 w-1 rounded-full bg-emerald-500" />
-              <span className="hover:text-emerald-600 transition">{item}</span>
-              {index !== items.length - 1 && (
-                <span className="hidden sm:inline-block w-2" />
-              )}
-            </div>
-          ))}
+        <div className="relative py-4">
+          <div className="flex w-max animate-marquee gap-8">
+            {[...items, ...items].map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300"
+              >
+                <span className="h-1 w-1 rounded-full bg-emerald-500" />
+                <span className="hover:text-emerald-600 transition">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

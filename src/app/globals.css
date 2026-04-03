@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #f4fbf8;
@@ -106,4 +107,25 @@ img {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 10s linear infinite;
+  }
+}
+
+@layer utilities {
+  .pause-on-hover:hover {
+    animation-play-state: paused;
+  }
 }

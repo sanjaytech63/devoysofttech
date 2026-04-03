@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
-import { ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { useScroll } from "@/hooks/useScroll";
+import { OptimizedImage } from "../shared/OptimizedImage";
 
 export const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
@@ -15,12 +14,8 @@ export const HeroSection = () => {
     <section
       id="home"
       ref={ref}
-      className="relative overflow-hidden bg-gradient-to-br from-[#E6F4EA] via-[#DFF5E6] to-[#CFF3DC]"
+      className="relative overflow-hidden bg-[var(--surface)] dark:bg-[#111827]"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:40px_40px]" />
-
-      <div className="absolute right-[-200px] top-[-100px] h-[600px] w-[600px] rounded-full bg-white/40 blur-3xl" />
-
       <Container className="relative z-10 py-24 md:py-32">
         <div
           className={`max-w-3xl space-y-6 transition-all duration-700 ${
@@ -32,17 +27,24 @@ export const HeroSection = () => {
             <br />
             <span className="text-gradient-green">Digital</span>
             <br />
-            Products That <br /> Grow  Businesses
+            Products That <br /> Grow Businesses
           </h1>
 
-          <p className="text-base text-slate-600 md:text-lg">
+          <p className="text-base text-slate-600 md:text-lg dark:text-slate-300">
             Custom Web & Mobile Solutions That Convert Leads Into Clients —
             Designed With Precision, Built With Passion, Since 2017.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button className="flex items-center gap-2 btn-gradient">
-              See Our Work <ArrowRight size={16} />
+            <Button className="group flex items-center gap-2 btn-gradient">
+              See Our Work
+              <OptimizedImage
+                src="/images/arrow.svg"
+                alt="arrow-icon"
+                fill={false}
+                containerClassName="w-7 h-7 transition-transform duration-300 group-hover:rotate-36"
+                priority
+              />
             </Button>
 
             <Button className="bg-white !text-slate-900 border border-slate-200 hover:bg-slate-100">
@@ -55,32 +57,32 @@ export const HeroSection = () => {
               <p className="text-3xl font-extrabold text-[var(--foreground)] md:text-4xl">
                 7+
               </p>
-              <p className="text-xs">Years Active</p>
+              <p className="text-xs dark:text-slate-300">Years Active</p>
             </div>
             <div>
               <p className="text-3xl font-extrabold text-[var(--foreground)] md:text-4xl">
                 200+
               </p>
-              <p className="text-xs">Projects Done</p>
+              <p className="text-xs dark:text-slate-300">Projects Done</p>
             </div>
             <div>
               <p className="text-3xl font-extrabold text-[var(--foreground)] md:text-4xl">
                 4.9★
               </p>
-              <p className="text-xs">Avg Rating</p>
+              <p className="text-xs dark:text-slate-300">Avg Rating</p>
             </div>
           </div>
         </div>
       </Container>
 
-      <div className="pointer-events-none absolute bottom-0 right-0 hidden w-1/2 md:block opacity-40">
+      {/* <div className="pointer-events-none absolute bottom-0 right-0 hidden w-1/2 md:block opacity-40">
         <Image
           src="/images/Rectangle-40426.svg"
           alt="grid"
           width={800}
           height={600}
         />
-      </div>
+      </div> */}
     </section>
   );
 };

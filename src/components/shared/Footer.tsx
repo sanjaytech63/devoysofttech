@@ -1,6 +1,6 @@
 "use client";
 
-import { Globe2, GitBranch, Link2, Share2, Link } from "lucide-react";
+import Link from "next/link";
 import { OptimizedImage } from "./OptimizedImage";
 
 export const SITE_CONFIG = {
@@ -16,53 +16,57 @@ export const SITE_CONFIG = {
   services: ["Web Development", "Mobile Apps", "E-Commerce", "SEO"],
   company: ["About Us", "Portfolio", "Contact"],
   social: [
-    { label: "Website", icon: Globe2 },
-    { label: "LinkedIn", icon: Link2 },
-    { label: "GitHub", icon: GitBranch },
-    { label: "Share", icon: Share2 },
+    { label: "LinkedIn", image: "/images/Vector-2.svg" },
+    { label: "Instagram", image: "/images/Group.svg" },
+    { label: "Twitter", image: "/images/Vector-1.svg" },
+    { label: "Facebook", image: "/images/Vector.svg" },
   ],
 };
 
 export const Footer = () => {
   return (
-    <footer className="bg-[var(--foreground)] text-white">
+    <footer className="bg-foreground dark:bg-[#111827] border-t border-gray-600 text-white">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
-          {/* LOGO + DESC */}
           <div>
-             <div className="flex items-center">
-            <Link href="/" aria-label="DevoySoftTech logo">
-              <OptimizedImage
-                src="/images/logo.png"
-                alt="Logo"
-                fill={false}
-                containerClassName="w-[164px] h-auto"
-                priority
-              />
-            </Link>
+            <div className="flex items-center">
+              <Link href="/" aria-label="DevoySoftTech logo">
+                <OptimizedImage
+                  src="/images/logo.png"
+                  alt="Logo"
+                  fill={false}
+                  containerClassName="w-[164px] h-auto"
+                  priority
+                />
+              </Link>
             </div>
 
             <p className="mt-4 text-sm text-emerald-100 leading-relaxed">
               {SITE_CONFIG.description}
             </p>
 
-            {/* SOCIAL */}
             <div className="mt-5 flex gap-3">
               {SITE_CONFIG.social.map((item) => {
-                const Icon = item.icon;
                 return (
                   <div
                     key={item.label}
                     className="flex h-9 w-9 items-center justify-center rounded-md bg-white/10 hover:bg-white/20 transition"
                   >
-                    <Icon size={16} />
+                    <Link href={item.label} aria-label={item.label}>
+                      <OptimizedImage
+                        src={item.image}
+                        alt={item.label}
+                        fill={false}
+                        containerClassName="w-3 h-auto"
+                        priority
+                      />
+                    </Link>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          {/* SERVICES */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-[var(--highlight)]">
               Services
@@ -76,7 +80,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* COMPANY */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-[var(--highlight)]">
               Company
@@ -90,7 +93,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* CONTACT */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-[var(--highlight)]">
               Contact

@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import clsx from "clsx";
 import { Section } from "../ui/Section";
+import { Button } from "../ui/Button";
+import { OptimizedImage } from "../shared/OptimizedImage";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   code: Code2,
@@ -38,10 +40,16 @@ export const ServicesSection = () => {
               Services We <span className="text-[var(--accent)]">Provide</span>
             </h2>
 
-            <button className="hidden items-center gap-2 rounded-lg btn-gradient px-5 py-2 text-sm font-medium text-white md:flex">
+            <Button className="group hidden  md:flex items-center gap-2 btn-gradient text-sm">
               View All Service
-              <ArrowRight size={16} />
-            </button>
+              <OptimizedImage
+                src="/images/arrow.svg"
+                alt="arrow-icon"
+                fill={false}
+                containerClassName="w-7 h-7 transition-transform duration-300 group-hover:rotate-36"
+                priority
+              />
+            </Button>
           </div>
 
           <div
@@ -71,7 +79,6 @@ export const ServicesSection = () => {
                   <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
                     <Icon size={18} />
                   </div>
-                  {/* TITLE */}
                   <h3 className="text-base font-semibold text-slate-900">
                     {service.title}
                   </h3>

@@ -29,7 +29,7 @@ export function OptimizedImage({
       )}
     >
       <Image
-        src={src || "/images/bluer-image.png"}
+        src={src || "/images/logo.png"}
         alt={alt || "Image"}
         fill={fill}
         width={!fill ? 100 : undefined}

@@ -35,7 +35,7 @@ export const TestimonialsSection = () => {
             <div
               key={item.id}
               className={clsx(
-                "rounded-xl bg-white p-6 border shadow-[var(--shadow-sm)] ",
+                "rounded-2xl bg-white p-6 transition hover:shadow-md ",
                 index === 2 && "md:col-span-2",
               )}
             >

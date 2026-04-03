@@ -27,9 +27,7 @@ export const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--background)]/95 backdrop-blur-md ">
-      {/* NAVBAR */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-        {/* LEFT: LOGO */}
         <Link href="/" aria-label="DevoySoftTech logo">
           <OptimizedImage
             src="/images/logo.png"
@@ -40,11 +38,9 @@ export const Navbar = () => {
           />
         </Link>
 
-        {/* CENTER: DESKTOP MENU */}
         <div className="hidden md:flex items-center gap-6">
           {links.map((link) => {
             const isActive = pathname === link.href;
-
             return (
               <Link key={link.href} href={link.href} className="relative">
                 <span
@@ -57,8 +53,6 @@ export const Navbar = () => {
                 >
                   {link.label}
                 </span>
-
-                {/* underline */}
                 <span
                   className={clsx(
                     "absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--accent)] transition-all duration-300",
@@ -70,15 +64,18 @@ export const Navbar = () => {
           })}
         </div>
 
-        {/* RIGHT: ACTIONS */}
         <div className="flex items-center gap-2 md:gap-3">
           <ThemeToggle />
-          {/* DESKTOP CTA */}
-          <Button className="btn-gradient !hidden md:!inline-flex text-sm">
+          <Button className="group !hidden md:flex! items-center gap-2 btn-gradient text-sm">
             Get a Quote
+            <OptimizedImage
+              src="/images/arrow.svg"
+              alt="arrow-icon"
+              fill={false}
+              containerClassName="w-7 h-auto transition-transform duration-300 group-hover:rotate-36"
+              priority
+            />
           </Button>
-
-          {/* MENU BUTTON */}
           <button
             onClick={() => setOpen(true)}
             className="p-2 rounded-lg md:hidden hover:bg-slate-100 dark:hover:bg-slate-800"
@@ -88,7 +85,6 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* OVERLAY */}
       <div
         onClick={() => setOpen(false)}
         className={clsx(
@@ -97,14 +93,12 @@ export const Navbar = () => {
         )}
       />
 
-      {/* MOBILE DRAWER */}
       <div
         className={clsx(
           "fixed top-0 left-0 z-50 h-full w-[280px] bg-indigo-500 p-5 shadow-2xl transition-transform duration-300 ease-in-out dark:bg-slate-950",
           open ? "translate-x-0" : "-translate-x-full",
         )}
       >
-        {/* HEADER */}
         <div className="flex items-center justify-between mb-6">
           <span className="font-semibold text-lg">Menu</span>
           <button
@@ -115,11 +109,9 @@ export const Navbar = () => {
           </button>
         </div>
 
-        {/* LINKS */}
         <div className="flex flex-col gap-2">
           {links.map((link) => {
             const isActive = pathname === link.href;
-
             return (
               <Link
                 key={link.href}
@@ -138,9 +130,17 @@ export const Navbar = () => {
           })}
         </div>
 
-        {/* CTA */}
         <div className="mt-6">
-          <Button className="btn-gradient w-full">Get a Quote</Button>
+          <Button className="group flex items-center gap-2 btn-gradient">
+            Get a Quote
+            <OptimizedImage
+              src="/images/arrow.svg"
+              alt="arrow-icon"
+              fill={false}
+              containerClassName="w-7 h-7 transition-transform duration-300 group-hover:rotate-36"
+              priority
+            />
+          </Button>
         </div>
       </div>
     </header>

@@ -1,41 +1,17 @@
 "use client";
 
+import { useRef } from "react";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { useRef } from "react";
 import { useScroll } from "@/hooks/useScroll";
-import { MessageSquare, FileText, Code2, Headphones } from "lucide-react";
 import clsx from "clsx";
 
-const features = [
-  {
-    title: "Discussion",
-    icon: MessageSquare,
-    desc: "We deeply understand your requirement pricing from day one.",
-  },
-  {
-    title: "Documentation",
-    icon: FileText,
-    desc: "NDA-backed privacy, clear timelines, full project docs.",
-  },
-  {
-    title: "Coding & Design",
-    icon: Code2,
-    desc: "Built by experts, rigorously tested before going live.",
-  },
-  {
-    title: "Support",
-    icon: Headphones,
-    desc: "Ongoing maintenance to keep you ahead.",
-  },
-];
-
-export const AboutSection = () => {
+export const AboutHeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const visible = useScroll(ref);
 
   return (
-    <Section id="about" className="bg-[var(--background)]">
+    <Section id="about" className="bg-background">
       <Container>
         <div
           ref={ref}
@@ -64,37 +40,23 @@ export const AboutSection = () => {
 
           <div>
             <h2 className="text-3xl font-black md:text-5xl leading-tight text-[var(--foreground)]">
-              We <span className="text-[var(--accent)]">Grow</span> Your
-              Business Digitally
+              We Make Life <span className="text-[var(--accent)]">Better</span>{" "}
+              Through Technology
             </h2>
 
+            <p className="mt-4 text-md font-bold text-foreground dark:text-slate-300 max-w-md">
+              Devoy Softech is a product team for hire that makes life better.
+            </p>
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 max-w-md">
-              Devoy Softtech is a creative IT company founded in 2017. We help
+              Devoy Softech is a creative IT company founded in 2017. We help
               businesses establish and expand their brand in a digital-first
               world — converting leads into loyal clients.
             </p>
-
-            <div className="mt-6 space-y-3">
-              {features.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.title}
-                    className="flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-sm"
-                  >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-md bg-emerald-100 text-emerald-600">
-                      <Icon size={16} />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-slate-900">
-                        {item.title}
-                      </p>
-                      <p className="text-xs text-slate-500">{item.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 max-w-md">
+              Every project we take on becomes a personal mission. We do not
+              just write code — we solve problems, remove friction, and create
+              experiences that convert potential leads into loyal clients.
+            </p>
           </div>
         </div>
       </Container>
