@@ -14,9 +14,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 import clsx from "clsx";
-import { Section } from "../ui/Section";
-import { Button } from "../ui/Button";
-import { OptimizedImage } from "../shared/OptimizedImage";
+import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
+import { OptimizedImage } from "@/components/shared/OptimizedImage";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   code: Code2,
@@ -32,12 +32,12 @@ export const ServicesSection = () => {
   const isVisible = useScroll(ref);
 
   return (
-    <Section id="services" className="bg-[var(--surface)]">
+    <Section id="services" className="bg-(--surface)">
       <Container>
         <div>
           <div className="mb-12 flex items-center justify-between">
-            <h2 className="text-3xl font-black md:text-4xl text-[var(--foreground)]">
-              Services We <span className="text-[var(--accent)]">Provide</span>
+            <h2 className="text-3xl font-black md:text-4xl text-foreground">
+              Services We <span className="text-(--accent)">Provide</span>
             </h2>
 
             <Button className="group hidden  md:flex items-center gap-2 btn-gradient text-sm">
@@ -55,11 +55,11 @@ export const ServicesSection = () => {
           <div
             ref={ref}
             className={clsx(
-              "grid gap-6 sm:grid-cols-2 lg:grid-cols-3",
+              "grid gap-12 sm:grid-cols-2 lg:grid-cols-3",
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8",
-              "transition-all duration-700",
+              "transition-all duration-700 ",
             )}
           >
             {services.map((service) => {
@@ -73,10 +73,20 @@ export const ServicesSection = () => {
                   bg-white 
                   p-6 
                   transition 
-                  hover:shadow-md
+                  hover:shadow-2xl
+                  group 
                 "
                 >
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                  <div
+                    className="
+                    mb-4 flex h-10 w-10 items-center justify-center 
+                    rounded-lg 
+                    bg-(--surface) text-(--accent)
+                    transition-all duration-300
+                    group-hover:bg-(--accent) 
+                    group-hover:text-white
+                  "
+                  >
                     <Icon size={18} />
                   </div>
                   <h3 className="text-base font-semibold text-slate-900">

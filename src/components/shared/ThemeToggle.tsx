@@ -17,7 +17,7 @@ export const ThemeToggle = () => {
       style={{
         border: "0.574px solid #C0DCCA",
       }}
-      className="border rounded-full cursor-pointer p-1 md:p-2 border-slate-200 dark:border-slate-700"
+      className="border rounded-full cursor-pointer p-1 md:p-1.5 border-slate-200 dark:border-slate-700"
     >
       {isDark ? (
         <Sun
@@ -25,7 +25,10 @@ export const ThemeToggle = () => {
           className="text-[#22C55E] transition-transform duration-300"
         />
       ) : (
-        <Moon size={20} className="text-[#22C55E] transition-transform duration-300" />
+        <Moon
+          size={20}
+          className="text-[#22C55E] transition-transform duration-300"
+        />
       )}
 
       <span className="sr-only">Toggle theme</span>

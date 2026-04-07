@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/Button";
 import { Section } from "../ui/Section";
 
 export const CTASection = () => (
-   <Section id="cta">
+  <Section id="cta">
     <Container>
       <div
         className="
           rounded-2xl
-          bg-gradient-to-r from-[#0B3D1E] via-[#14532D] to-[#15803D]
+          bg-linear-to-r from-[#0B3D1E] via-[#14532D] to-[#15803D]
           px-6 py-12 sm:px-12 sm:py-16
           text-center text-white
           shadow-[0_10px_40px_rgba(0,0,0,0.2)]
@@ -27,7 +27,7 @@ export const CTASection = () => (
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Button
             className="
-              bg-white !text-slate-900
+              bg-white text-slate-900!
               hover:bg-slate-100
               px-6 py-2.5
               rounded-lg font-medium

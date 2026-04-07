@@ -1,28 +1,17 @@
 "use client";
 
-import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { useScroll } from "@/hooks/useScroll";
-import { OptimizedImage } from "../shared/OptimizedImage";
+import Image from "next/image";
+import { Section } from "@/components/ui/Section";
+import { OptimizedImage } from "@/components/shared/OptimizedImage";
 
 export const HeroSection = () => {
-  const ref = useRef<HTMLElement>(null);
-  const visible = useScroll(ref);
-
   return (
-    <section
-      id="home"
-      ref={ref}
-      className="relative overflow-hidden bg-[var(--surface)] dark:bg-[#111827]"
-    >
-      <Container className="relative z-10 py-24 md:py-32">
-        <div
-          className={`max-w-3xl space-y-6 transition-all duration-700 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h1 className="text-4xl font-black leading-tight text-[var(--foreground)] md:text-6xl">
+    <Section id="home" className="relative overflow-hidden">
+      <Container className="relative z-10">
+        <div className={`max-w-3xl space-y-6 transition-all duration-700`}>
+          <h1 className="text-4xl font-black leading-tight text-foreground md:text-6xl">
             We <span className="text-gradient-green">Build</span>
             <br />
             <span className="text-gradient-green">Digital</span>
@@ -30,13 +19,13 @@ export const HeroSection = () => {
             Products That <br /> Grow Businesses
           </h1>
 
-          <p className="text-base text-slate-600 md:text-lg dark:text-slate-300">
+          <p className="text-base text-(--muted) leading-relaxed">
             Custom Web & Mobile Solutions That Convert Leads Into Clients —
             Designed With Precision, Built With Passion, Since 2017.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button className="group flex items-center gap-2 btn-gradient">
+            <Button className="group flex hover:shadow-2xl items-center gap-2 btn-gradient">
               See Our Work
               <OptimizedImage
                 src="/images/arrow.svg"
@@ -47,27 +36,27 @@ export const HeroSection = () => {
               />
             </Button>
 
-            <Button className="bg-white !text-slate-900 border border-slate-200 hover:bg-slate-100">
+            <Button className="bg-white text-slate-900! border border-slate-200 hover:text-(--accent)!  hover:border-(--accent) hover:bg-white">
               Get A Free Quote
             </Button>
           </div>
 
           <div className="flex items-center gap-6 pt-4 text-sm text-slate-700">
             <div>
-              <p className="text-3xl font-extrabold text-[var(--foreground)] md:text-4xl">
+              <p className="text-3xl font-extrabold text-foreground md:text-4xl">
                 7+
               </p>
               <p className="text-xs dark:text-slate-300">Years Active</p>
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-[var(--foreground)] md:text-4xl">
+              <p className="text-3xl font-extrabold text-foreground md:text-4xl">
                 200+
               </p>
               <p className="text-xs dark:text-slate-300">Projects Done</p>
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-[var(--foreground)] md:text-4xl">
-                4.9★
+              <p className="text-3xl font-extrabold text-foreground md:text-4xl">
+                4.9<span className="text-[25px]">★</span>
               </p>
               <p className="text-xs dark:text-slate-300">Avg Rating</p>
             </div>
@@ -75,14 +64,23 @@ export const HeroSection = () => {
         </div>
       </Container>
 
-      {/* <div className="pointer-events-none absolute bottom-0 right-0 hidden w-1/2 md:block opacity-40">
+      <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
         <Image
-          src="/images/Rectangle-40426.svg"
-          alt="grid"
-          width={800}
-          height={600}
+          src="/images/home-hero-bg.png"
+          alt="hero-bg"
+          fill
+          priority
+          className="object-cover object-center opacity-50"
         />
-      </div> */}
-    </section>
+
+        <Image
+          src="/images/home-hero-img.png"
+          alt="hero-img"
+          fill
+          priority
+          className="object-cover object-center-bottom mix-blend-multiply"
+        />
+      </div>
+    </Section>
   );
 };

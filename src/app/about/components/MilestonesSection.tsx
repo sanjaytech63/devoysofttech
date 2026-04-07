@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { OptimizedImage } from "../shared/OptimizedImage";
 
 const milestones = [
   {
@@ -42,11 +41,11 @@ export const MilestonesSection = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* ================= TITLE ================= */}
         <div className="mb-16 max-w-3xl">
-          <h2 className="text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-foreground ">
             7 Years
             <br />
             Of{" "}
-            <span className="bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-(--accent)">
               Milestones
             </span>
           </h2>
@@ -73,11 +72,11 @@ export const MilestonesSection = () => {
                       {item.year}
                     </p>
 
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mt-1">
+                    <h3 className="text-lg font-semibold text-foreground mt-1">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-md leading-relaxed">
+                    <p className="text-sm text-(--muted) mt-1 max-w-md leading-relaxed">
                       {item.detail}
                     </p>
                   </div>

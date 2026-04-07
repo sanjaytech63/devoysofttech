@@ -47,12 +47,12 @@ export const AboutHeroSection = () => {
             <p className="mt-4 text-md font-bold text-foreground dark:text-slate-300 max-w-md">
               Devoy Softech is a product team for hire that makes life better.
             </p>
-            <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 max-w-md">
+            <p className="mt-4 text-sm text-(--muted) max-w-md">
               Devoy Softech is a creative IT company founded in 2017. We help
               businesses establish and expand their brand in a digital-first
               world — converting leads into loyal clients.
             </p>
-            <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 max-w-md">
+            <p className="mt-4 text-sm text-(--muted) max-w-md">
               Every project we take on becomes a personal mission. We do not
               just write code — we solve problems, remove friction, and create
               experiences that convert potential leads into loyal clients.

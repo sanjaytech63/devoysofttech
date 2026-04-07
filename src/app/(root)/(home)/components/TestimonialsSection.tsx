@@ -13,11 +13,11 @@ export const TestimonialsSection = () => {
   const isVisible = useScroll(ref);
 
   return (
-    <Section id="testimonials" className="bg-[var(--surface)]">
+    <Section id="testimonials" className="bg-(--surface)">
       <Container>
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-black md:text-5xl text-[var(--foreground)]">
-            What Clients <span className="text-emerald-500">Say</span>
+          <h2 className="text-3xl font-black md:text-5xl text-foreground">
+            What Clients <span className="text-(--accent)">Say</span>
           </h2>
         </div>
 

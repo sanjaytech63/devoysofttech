@@ -40,7 +40,7 @@ export const StatsSection = () => {
     <section
       id="stats"
       className="
-        bg-gradient-to-r 
+       bg-linear-to-r
         from-[#0B3D1E] via-[#14532D] to-[#15803D]
         py-10
       "
@@ -49,11 +49,11 @@ export const StatsSection = () => {
         <div className="flex itemscenter justify-between">
           {stats.map((stat) => (
             <div key={stat.label}>
-              <p className="text-3xl font-extrabold text-emerald-300 md:text-4xl">
+              <p className="text-3xl font-extrabold text-(--accent) md:text-4xl">
                 {stat.current}
                 <span className="ml-1 text-lg">+</span>
               </p>
-              <p className="mt-1 text-[10px] uppercase tracking-widest text-emerald-100">
+              <p className="mt-1 text-[10px] uppercase tracking-widest text-(--muted)">
                 {stat.label}
               </p>
             </div>

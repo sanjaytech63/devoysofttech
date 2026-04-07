@@ -11,6 +11,12 @@ const items = [
   "Laravel & React",
   "Flutter Apps",
   "Dedicated Developers",
+  "Custom Software",
+  "Cloud Solutions",
+  "API Development",
+  "Maintenance & Support",
+  "Digital Transformation",
+  "Agile Methodology",
 ];
 
 export const ServicesTicker = () => {

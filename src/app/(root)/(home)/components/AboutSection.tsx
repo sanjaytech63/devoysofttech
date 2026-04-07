@@ -35,7 +35,7 @@ export const AboutSection = () => {
   const visible = useScroll(ref);
 
   return (
-    <Section id="about" className="bg-[var(--background)]">
+    <Section id="about" className="bg-background">
       <Container>
         <div
           ref={ref}
@@ -45,7 +45,7 @@ export const AboutSection = () => {
             "transition-all duration-700",
           )}
         >
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#0B3D1E] to-[#22C55E] p-6 h-[380px] overflow-hidden">
+          <div className="relative rounded-3xl hover:scale-105 duration-300 transition-transform bg-linear-to-br from-[#0B3D1E] to-[#22C55E] p-6 h-95 overflow-hidden">
             <div className="absolute left-4 top-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-600 shadow">
               7+ Years
             </div>
@@ -63,9 +63,9 @@ export const AboutSection = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-black md:text-5xl leading-tight text-[var(--foreground)]">
-              We <span className="text-[var(--accent)]">Grow</span> Your
-              Business Digitally
+            <h2 className="text-3xl font-black md:text-5xl leading-tight text-foreground">
+              We <span className="text-(--accent)">Grow</span> Your Business
+              Digitally
             </h2>
 
             <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 max-w-md">
