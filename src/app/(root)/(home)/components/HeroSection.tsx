@@ -8,10 +8,12 @@ import { OptimizedImage } from "@/components/shared/OptimizedImage";
 
 export const HeroSection = () => {
   return (
-    <Section id="home" className="relative overflow-hidden py-16 md:py-24">
+    <Section id="home" className="relative overflow-hidden">
       <Container className="relative z-10">
-        <div className={`max-w-3xl space-y-4 md:space-y-6 transition-all duration-700`}>
-          <h1 className="heading-main text-center md:text-left">
+        <div
+          className={`max-w-3xl space-y-4 md:space-y-6 transition-all duration-700`}
+        >
+          <h1 className="heading-section leading-tight text-center md:text-left">
             We <span className="text-gradient-green">Build</span>
             <br className="hidden sm:block" />
             <span className="text-gradient-green">Digital</span>
@@ -31,7 +33,7 @@ export const HeroSection = () => {
                 src="/images/arrow.svg"
                 alt="arrow-icon"
                 fill={false}
-                containerClassName="w-7 h-7 transition-transform duration-300 group-hover:rotate-36"
+                containerClassName="w-7! h-7! transition-transform duration-300 group-hover:rotate-30"
                 priority
               />
             </Button>
@@ -67,9 +69,12 @@ export const HeroSection = () => {
       <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
         <Image
           src="/images/home-hero-bg.png"
-          alt=""
+          alt="home-hero-bg"
           fill
           priority
+          quality={75}
+          placeholder="blur"
+          blurDataURL="/images/bluer-image.png"
           sizes="100vw"
           className="object-cover object-center"
         />
@@ -79,6 +84,9 @@ export const HeroSection = () => {
           alt="Team working on digital products"
           fill
           priority
+          quality={75}
+          placeholder="blur"
+          blurDataURL="/images/bluer-image.png"
           sizes="100vw"
           className="object-cover object-center-bottom mix-blend-multiply"
         />

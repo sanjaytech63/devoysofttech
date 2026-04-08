@@ -19,7 +19,7 @@ export default function GlobalError({
   return (
     <html>
       <body>
-        <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-red-50 via-white to-red-100 px-4 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
+        <div className="flex min-h-screen items-center justify-center  px-4 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
           <div className="w-full max-w-lg rounded-2xl border border-red-200 bg-white/80 p-8 shadow-xl backdrop-blur-md dark:border-red-900 dark:bg-slate-900/70">
             <div className="flex justify-center">
               <div className="rounded-full bg-red-100 p-4 dark:bg-red-900/30">
@@ -43,14 +43,6 @@ export default function GlobalError({
             )}
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Button
-                onClick={() => reset()}
-                className="flex w-full items-center justify-center gap-2"
-              >
-                <RefreshCcw size={16} />
-                Try Again
-              </Button>
-
               <Link href="/" className="w-full">
                 <Button
                   variant="secondary"
@@ -60,6 +52,14 @@ export default function GlobalError({
                   Go Home
                 </Button>
               </Link>
+              <Button
+                variant="secondary"
+                onClick={() => reset()}
+                className="flex w-full items-center justify-center gap-2"
+              >
+                <RefreshCcw size={16} />
+                Try Again
+              </Button>
             </div>
           </div>
         </div>

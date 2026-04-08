@@ -7,5 +7,5 @@ interface SectionProps {
 }
 
 export const Section = ({ children, className, id }: SectionProps) => (
-  <section id={id} className={`py-16 md:py-16 ${className ?? ""}`}> {children} </section>
+  <section id={id} className={`py-6 md:py-16 ${className ?? ""}`}> {children} </section>
 );

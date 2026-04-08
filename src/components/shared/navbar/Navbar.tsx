@@ -11,6 +11,7 @@ import { NavLinks } from "../NavLinks";
 import { MobileDrawer } from "./MobileDrawer";
 import { NavLink } from "@/types/navigation";
 import { Logo } from "../Logo";
+import { OptimizedImage } from "../OptimizedImage";
 
 const links: NavLink[] = [
   { label: "Home", href: "/" },
@@ -42,11 +43,22 @@ export const Navbar = () => {
           <div className="flex items-center gap-3">
             <ThemeToggle />
 
-            <Button className="hidden! md:flex! btn-gradient">
+            <Button className="group hidden! md:flex! items-center btn-gradient">
               Get a Quote
+              <OptimizedImage
+                src="/images/arrow.svg"
+                alt="arrow-icon"
+                fill={false}
+                containerClassName="w-6! h-6! transition-transform duration-300 group-hover:rotate-30"
+                priority
+              />
             </Button>
 
-            <button onClick={() => setOpen(true)} className="md:hidden" aria-label="Open menu">
+            <button
+              onClick={() => setOpen(true)}
+              className="md:hidden"
+              aria-label="Open menu"
+            >
               <Menu className="text-(--accent)" />
             </button>
           </div>
@@ -57,7 +69,11 @@ export const Navbar = () => {
       <MobileDrawer open={open} setOpen={setOpen}>
         <div className="flex items-center justify-between">
           <Logo />
-          <button onClick={() => setOpen(false)} className="md:hidden" aria-label="Close menu">
+          <button
+            onClick={() => setOpen(false)}
+            className="md:hidden"
+            aria-label="Close menu"
+          >
             <X className="text-(--accent)" />
           </button>
         </div>
@@ -70,7 +86,16 @@ export const Navbar = () => {
           />
         </div>
 
-        <Button className="w-full btn-gradient">Get a Quote</Button>
+        <Button className="w-full btn-gradient">
+          Get a Quote{" "}
+          <OptimizedImage
+            src="/images/arrow.svg"
+            alt="arrow-icon"
+            fill={false}
+            containerClassName="w-7! h-7! transition-transform duration-300 group-hover:rotate-30"
+            priority
+          />
+        </Button>
       </MobileDrawer>
     </>
   );

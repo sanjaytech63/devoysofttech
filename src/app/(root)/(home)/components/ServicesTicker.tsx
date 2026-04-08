@@ -30,10 +30,8 @@ export const ServicesTicker = () => {
                 key={index}
                 className="flex items-center gap-2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300"
               >
-                <span className="h-1 w-1 rounded-full bg-emerald-500" />
-                <span className="hover:text-emerald-600 transition">
-                  {item}
-                </span>
+                <span className="h-1 w-1 rounded-full bg-(--accent)" />
+                <span className="hover:text-(--accent) transition">{item}</span>
               </div>
             ))}
           </div>

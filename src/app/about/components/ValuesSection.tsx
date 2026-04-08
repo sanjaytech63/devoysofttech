@@ -3,7 +3,14 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
-import { ShieldCheck, Globe, Users, Handshake, Rocket } from "lucide-react";
+import {
+  ShieldCheck,
+  Globe,
+  Users,
+  Rocket,
+  AlignEndHorizontal,
+  CircleGauge,
+} from "lucide-react";
 
 const values = [
   {
@@ -27,13 +34,13 @@ const values = [
     title: "Speed Without Compromise",
     subtitle:
       "Fast iteration and frequent feedback loops with scalability baked in.",
-    icon: Handshake,
+    icon: CircleGauge,
   },
   {
     title: "Flexible Engagement",
     subtitle:
       "Project-based, dedicated squad, or retainer models to match your needs.",
-    icon: Handshake,
+    icon: AlignEndHorizontal,
   },
   {
     title: "Outcome Guarantee",
@@ -48,16 +55,10 @@ export const ValuesSection = () => {
     <Section id="values" className="bg-background">
       <Container>
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
-            What We Stand For
-          </p>
-          <h2 className="heading-section mt-3">
-            Trusted principles that guide every build.
-          </h2>
-          <p className="text-paragraph mt-4">
-            We blend structure with creativity to deliver premium digital
-            experiences.
-          </p>
+          <h1 className="heading-section leading-tight">
+            <span className="text-foreground"> What We</span>
+            <span className="heading-section-accent"> Stand For</span>
+          </h1>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -65,13 +66,17 @@ export const ValuesSection = () => {
             const Icon = value.icon;
             return (
               <Card key={value.title} className="border-emerald-100 group">
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-(--accent) transition-all duration-300 group-hover:bg-[#166534] group-hover:text-white">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-(--surface) text-(--accent) transition-all duration-300 group-hover:bg-(--accent) group-hover:text-white">
                   <Icon size={20} />
                 </div>
-                <h3 className="text-lg font-bold text-foreground nav-link">
+
+                <h3 className="text-base font-semibold text-slate-900 dark:text-white">
                   {value.title}
                 </h3>
-                <p className="mt-2 text-sm text-(--muted) dark:text-slate-300">{value.subtitle}</p>
+
+                <p className="mt-2 text-paragraph  leading-relaxed">
+                  {value.subtitle}
+                </p>
               </Card>
             );
           })}

@@ -32,21 +32,22 @@ export const ServicesSection = () => {
   const isVisible = useScroll(ref);
 
   return (
-    <Section id="services" className="py-16 md:py-24 bg-(--surface)">
+    <Section id="services" className="bg-(--surface)">
       <Container>
         <div>
           <div className="mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <h2 className="heading-section text-center sm:text-left">
-              Services We <span className="heading-section-accent">Provide</span>
+              Services We{" "}
+              <span className="heading-section-accent">Provide</span>
             </h2>
 
-            <Button className="group hidden sm:flex items-center gap-2 btn-gradient btn-cta-text text-sm self-center sm:self-auto">
+            <Button className="group flex hover:shadow-2xl items-center gap-2 btn-gradient">
               View All Service
               <OptimizedImage
                 src="/images/arrow.svg"
                 alt="arrow-icon"
                 fill={false}
-                containerClassName="w-7 h-7 transition-transform duration-300 group-hover:rotate-36"
+                containerClassName="w-7! h-7! transition-transform duration-300 group-hover:rotate-30"
                 priority
               />
             </Button>
@@ -93,11 +94,14 @@ export const ServicesSection = () => {
                     {service.title}
                   </h3>
 
-                  <p className="mt-2 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                  <p className="mt-2 text-paragraph  leading-relaxed">
                     {service.description}
                   </p>
 
-                  <button className="mt-4 flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700" aria-label={`Learn more about ${service.title}`}>
+                  <button
+                    className="mt-4 cursor-pointer flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700"
+                    aria-label={`Learn more about ${service.title}`}
+                  >
                     Learn More
                     <ArrowRight size={14} />
                   </button>

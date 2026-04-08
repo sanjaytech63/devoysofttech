@@ -24,7 +24,7 @@ export function OptimizedImage({
     <div
       className={clsx(
         "relative overflow-hidden",
-        fill && "aspect-video",
+        fill ? "w-full h-full" : "w-auto h-auto",
         containerClassName,
       )}
     >
@@ -47,9 +47,9 @@ export function OptimizedImage({
             : undefined
         }
         className={clsx(
-          fill ? "object-cover" : "object-contain",
+          fill ,
           "transition-transform duration-500 ease-out",
-          fill && "hover:scale-110",
+          fill,
           className,
         )}
       />

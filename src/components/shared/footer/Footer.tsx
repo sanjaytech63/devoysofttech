@@ -52,7 +52,7 @@ export const Footer = () => {
                     src={item.image}
                     alt={item.label}
                     fill={false}
-                    containerClassName="w-3 h-auto"
+                    containerClassName="w-3! h-auto"
                     priority
                   />
                 </Link>
@@ -70,13 +70,19 @@ export const Footer = () => {
               Contact
             </h4>
             <div className="mt-4 space-y-2 text-sm text-emerald-100">
-              <a href={`mailto:${SITE_CONFIG.contact.email}`} className="hover:text-(--highlight) block">
+              <Link
+                href={`mailto:${SITE_CONFIG.contact.email}`}
+                className="hover:text-(--highlight)! block text-paragraph"
+              >
                 {SITE_CONFIG.contact.email}
-              </a>
-              <a href={`tel:${SITE_CONFIG.contact.phone}`} className="hover:text-(--highlight) block">
+              </Link>
+              <Link
+                href={`tel:${SITE_CONFIG.contact.phone}`}
+                className="hover:text-(--highlight)! block text-paragraph"
+              >
                 {SITE_CONFIG.contact.phone}
-              </a>
-              <p>
+              </Link>
+              <p className="text-paragraph hover:text-(--highlight)!">
                 {SITE_CONFIG.contact.location}
               </p>
             </div>

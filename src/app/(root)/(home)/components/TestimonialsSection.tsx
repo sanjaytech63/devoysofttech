@@ -13,9 +13,9 @@ export const TestimonialsSection = () => {
   const isVisible = useScroll(ref);
 
   return (
-    <Section id="testimonials" className="py-16 md:py-24 bg-(--surface)">
+    <Section id="testimonials" className="bg-(--surface)">
       <Container>
-        <div className="mb-8 md:mb-12 text-center">
+        <div className="mb-8 md:mb-12">
           <h2 className="heading-section">
             What Clients <span className="heading-section-accent">Say</span>
           </h2>
@@ -39,25 +39,23 @@ export const TestimonialsSection = () => {
                 index === 2 && "md:col-span-2",
               )}
             >
-              <div className="mb-3 flex gap-1 text-yellow-400 transition-all duration-300 group-hover:scale-110">
+              <div className="mb-3 flex gap-1 text-yellow-400 transition-all duration-300">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
               </div>
 
-              <p className="text-slate-700 dark:text-slate-300">
-                {item.quote}
-              </p>
+              <p className="text-paragraph">{item.quote}</p>
 
               <div className="mt-4 flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-xs font-bold text-white transition-all duration-300 group-hover:bg-emerald-600 group-hover:scale-110">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-(--accent) text-xs font-bold text-white transition-all duration-300 group-hover:bg-(--accent) group-hover:scale-110">
                   {item.name.charAt(0)}
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-slate-900 dark:text-white">
                     {item.name}
                   </p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="text-xs! text-paragraph">
                     {item.role} • {item.company}
                   </p>
                 </div>

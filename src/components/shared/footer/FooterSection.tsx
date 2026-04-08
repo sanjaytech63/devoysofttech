@@ -14,7 +14,7 @@ export const FooterSection = ({ title, items }: FooterSectionProps) => {
         {items?.map((item) => (
           <li
             key={item}
-            className="hover:text-(--highlight) cursor-pointer transition"
+            className="hover:text-(--highlight)! text-paragraph cursor-pointer transition"
           >
             {item}
           </li>

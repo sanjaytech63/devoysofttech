@@ -1,11 +1,44 @@
-import { AboutHeroSection } from "@/app/about/components/AboutHeroSection";
-import { ValuesSection } from "@/app/about/components/ValuesSection";
-import { DifferentiatorsSection } from "@/app/about/components/DifferentiatorsSection";
-import { TeamSection } from "@/app/about/components/TeamSection";
-import { CTASection } from "@/components/shared/CTASection";
+"use client";
+
+import dynamic from "next/dynamic";
 import HeroSection from "./components/HeroSection";
-import { StatsSection } from "@/components/shared/StatsSection";
-import { MilestonesSection } from "./components/MilestonesSection";
+import { AboutHeroSection } from "@/app/about/components/AboutHeroSection";
+
+const StatsSection = dynamic(() =>
+  import("@/components/shared/StatsSection").then((mod) => ({
+    default: mod.StatsSection,
+  })),
+);
+
+const ValuesSection = dynamic(() =>
+  import("@/app/about/components/ValuesSection").then((mod) => ({
+    default: mod.ValuesSection,
+  })),
+);
+
+const DifferentiatorsSection = dynamic(() =>
+  import("@/app/about/components/DifferentiatorsSection").then((mod) => ({
+    default: mod.DifferentiatorsSection,
+  })),
+);
+
+const MilestonesSection = dynamic(() =>
+  import("@/app/about/components/MilestonesSection").then((mod) => ({
+    default: mod.MilestonesSection,
+  })),
+);
+
+const TeamSection = dynamic(() =>
+  import("@/app/about/components/TeamSection").then((mod) => ({
+    default: mod.TeamSection,
+  })),
+);
+
+const CTASection = dynamic(() =>
+  import("@/components/shared/CTASection").then((mod) => ({
+    default: mod.CTASection,
+  })),
+);
 
 export default function AboutPage() {
   return (
@@ -17,7 +50,12 @@ export default function AboutPage() {
       <DifferentiatorsSection />
       <MilestonesSection />
       <TeamSection />
-      <CTASection />
+      <CTASection
+        title={<>Your Project Could Be Next</>}
+        description="Let's build something extraordinary together. Share your idea — we respond within 24 hours."
+        primaryBtnText="Start a Project"
+        secondaryBtnText="Explore the services  →"
+      />
     </main>
   );
 }

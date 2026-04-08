@@ -7,7 +7,6 @@ import { useScroll } from "@/hooks/useScroll";
 import { MessageSquare, FileText, Code2, Headphones } from "lucide-react";
 import clsx from "clsx";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
-import Image from "next/image";
 
 const features = [
   {
@@ -47,13 +46,11 @@ export const AboutSection = () => {
             "transition-all duration-700",
           )}
         >
-          <Image
+          <OptimizedImage
             src="/images/about-hero-img.png"
             alt="growth"
-            width={480}
-            height={600}
-            className="relative z-10 w-[360px] md:w-[420px] lg:w-[480px] h-auto object-cover"
-            priority
+            fill={true}
+            containerClassName="w-full h-full"
           />
 
           <div>
@@ -67,7 +64,6 @@ export const AboutSection = () => {
               businesses establish and expand their brand in a digital-first
               world — converting leads into loyal clients.
             </p>
-            
 
             <div className="mt-6 space-y-3">
               {features.map((item) => {
@@ -77,14 +73,14 @@ export const AboutSection = () => {
                     key={item.title}
                     className="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800 px-4 py-3 shadow-sm transition-all duration-300 hover:shadow-md group"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-md bg-emerald-100 text-emerald-600 transition-all duration-300 group-hover:bg-emerald-600 group-hover:text-white">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-md bg-(--surface) text-(--accent) transition-all duration-300 group-hover:bg-(--accent) group-hover:text-white">
                       <Icon size={16} />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                      <p className="text-sm font-semibold text-foreground dark:text-white">
                         {item.title}
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">{item.desc}</p>
+                      <p className="text-paragraph text-sm!">{item.desc}</p>
                     </div>
                   </div>
                 );

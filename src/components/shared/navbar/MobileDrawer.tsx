@@ -28,7 +28,7 @@ export const MobileDrawer = ({
       {/* Drawer */}
       <div
         className={clsx(
-          "fixed top-0 left-0 z-50 h-full w-[80%] bg-white dark:bg-slate-950 flex flex-col p-4 transition-transform duration-300",
+          "fixed top-0 left-0 z-50 h-full w-full bg-white dark:bg-slate-950 flex flex-col p-4 transition-transform duration-300",
           open ? "translate-x-0" : "-translate-x-full",
         )}
       >

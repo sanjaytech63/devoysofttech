@@ -37,7 +37,17 @@ export default function Home() {
       <ServicesSection />
       <StatsSection />
       <TestimonialsSection />
-      <CTASection />
+      <CTASection
+        title={
+          <>
+            Ready to Build something <br />
+            Extraordinary?
+          </>
+        }
+        description="Tell Us About Your Project - We’ll Get Back Within 24 Hours."
+        primaryBtnText="Start a Project"
+        secondaryBtnText="See Our Work →"
+      />
     </main>
   );
 }
