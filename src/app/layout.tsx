@@ -55,9 +55,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-accent text-white px-4 py-2 z-50">Skip to main content</a>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          {children}
+          <main id="main">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

@@ -69,14 +69,14 @@ export const Footer = () => {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-(--highlight)">
               Contact
             </h4>
-            <div className="mt-4 space-y-2 text-sm hover:text-(--highlight) cursor-pointer text-emerald-100">
-              <p className="hover:text-(--highlight) cursor-pointer">
+            <div className="mt-4 space-y-2 text-sm text-emerald-100">
+              <a href={`mailto:${SITE_CONFIG.contact.email}`} className="hover:text-(--highlight) block">
                 {SITE_CONFIG.contact.email}
-              </p>
-              <p className="hover:text-(--highlight) cursor-pointer">
+              </a>
+              <a href={`tel:${SITE_CONFIG.contact.phone}`} className="hover:text-(--highlight) block">
                 {SITE_CONFIG.contact.phone}
-              </p>
-              <p className="hover:text-(--highlight) cursor-pointer">
+              </a>
+              <p>
                 {SITE_CONFIG.contact.location}
               </p>
             </div>

@@ -46,7 +46,7 @@ export const Navbar = () => {
               Get a Quote
             </Button>
 
-            <button onClick={() => setOpen(true)} className="md:hidden">
+            <button onClick={() => setOpen(true)} className="md:hidden" aria-label="Open menu">
               <Menu className="text-(--accent)" />
             </button>
           </div>
@@ -57,7 +57,7 @@ export const Navbar = () => {
       <MobileDrawer open={open} setOpen={setOpen}>
         <div className="flex items-center justify-between">
           <Logo />
-          <button onClick={() => setOpen(false)} className="md:hidden">
+          <button onClick={() => setOpen(false)} className="md:hidden" aria-label="Close menu">
             <X className="text-(--accent)" />
           </button>
         </div>

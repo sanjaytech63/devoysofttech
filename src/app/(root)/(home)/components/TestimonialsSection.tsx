@@ -58,7 +58,7 @@ export const TestimonialsSection = () => {
                     {item.name}
                   </p>
                   <p className="text-xs text-slate-500">
-                    Freelancer • Top Client
+                    {item.role} • {item.company}
                   </p>
                 </div>
               </div>

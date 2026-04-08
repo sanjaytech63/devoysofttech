@@ -97,10 +97,10 @@ export const ServicesSection = () => {
                     {service.description}
                   </p>
 
-                  <div className="mt-4 cursor-pointer flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700">
+                  <button className="mt-4 flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700" aria-label={`Learn more about ${service.title}`}>
                     Learn More
                     <ArrowRight size={14} />
-                  </div>
+                  </button>
                 </div>
               );
             })}

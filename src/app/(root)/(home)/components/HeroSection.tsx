@@ -67,17 +67,19 @@ export const HeroSection = () => {
       <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
         <Image
           src="/images/home-hero-bg.png"
-          alt="hero-bg"
+          alt=""
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center opacity-50"
         />
 
         <Image
           src="/images/home-hero-img.png"
-          alt="hero-img"
+          alt="Team working on digital products"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center-bottom mix-blend-multiply"
         />
       </div>
