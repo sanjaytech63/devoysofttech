@@ -68,7 +68,7 @@ export const DifferentiatorsSection = () => (
               <h3 className="text-base font-semibold text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-1 text-sm text-(--muted)">{item.desc}</p>
+              <p className="mt-1 text-sm text-(--muted) dark:text-slate-300">{item.desc}</p>
             </Card>
           );
         })}

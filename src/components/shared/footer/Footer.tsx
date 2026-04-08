@@ -29,13 +29,13 @@ export const SITE_CONFIG: FooterConfig = {
 export const Footer = () => {
   return (
     <footer className="bg-foreground dark:bg-[#111827] border-t border-gray-600 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 md:py-12">
+        <div className="grid grid-cols-1 gap-8 md:gap-10 md:grid-cols-4">
           {/* Brand */}
           <div>
             <Logo />
 
-            <p className="text-paragraph mt-4 text-emerald-100 leading-relaxed">
+            <p className="text-paragraph mt-4 text-white leading-relaxed">
               {SITE_CONFIG.description}
             </p>
 

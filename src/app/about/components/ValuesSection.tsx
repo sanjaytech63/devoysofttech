@@ -71,7 +71,7 @@ export const ValuesSection = () => {
                 <h3 className="text-lg font-bold text-foreground nav-link">
                   {value.title}
                 </h3>
-                <p className="mt-2 text-sm text-(--muted)">{value.subtitle}</p>
+                <p className="mt-2 text-sm text-(--muted) dark:text-slate-300">{value.subtitle}</p>
               </Card>
             );
           })}

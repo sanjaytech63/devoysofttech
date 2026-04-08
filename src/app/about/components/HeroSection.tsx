@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/Section";
 
 export default function HeroSection() {
   return (
-    <Section id="different" className="bg-(--surface)">
+    <Section id="different" className="bg-(--surface) py-16 md:py-24">
       <Container>
         <div className="relative z-10">
           <div className="max-w-3xl">
@@ -15,7 +15,7 @@ export default function HeroSection() {
               <span className="heading-section-accent">Trusted Worldwide.</span>
             </h1>
 
-            <p className="text-paragraph mt-6 leading-relaxed">
+            <p className="text-paragraph mt-4 md:mt-6 leading-relaxed max-w-2xl ">
               Since 2017, we’ve been on a mission to help businesses grow
               digitally — with honest work, transparent processes, and
               technology that delivers.

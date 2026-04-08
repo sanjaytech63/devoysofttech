@@ -8,23 +8,23 @@ import { OptimizedImage } from "@/components/shared/OptimizedImage";
 
 export const HeroSection = () => {
   return (
-    <Section id="home" className="relative overflow-hidden">
+    <Section id="home" className="relative overflow-hidden py-16 md:py-24">
       <Container className="relative z-10">
-        <div className={`max-w-3xl space-y-6 transition-all duration-700`}>
-          <h1 className="heading-main md:text-6xl">
+        <div className={`max-w-3xl space-y-4 md:space-y-6 transition-all duration-700`}>
+          <h1 className="heading-main text-center md:text-left">
             We <span className="text-gradient-green">Build</span>
-            <br />
+            <br className="hidden sm:block" />
             <span className="text-gradient-green">Digital</span>
             <br />
-            Products That <br /> Grow Businesses
+            Products That <br className="hidden md:block" /> Grow Businesses
           </h1>
 
-          <p className="text-paragraph">
+          <p className="text-paragraph text-center md:text-left">
             Custom Web & Mobile Solutions That Convert Leads Into Clients —
             Designed With Precision, Built With Passion, Since 2017.
           </p>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col gap-3 sm:flex-row justify-center md:justify-start">
             <Button className="group flex hover:shadow-2xl items-center gap-2 btn-gradient">
               See Our Work
               <OptimizedImage

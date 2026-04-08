@@ -13,9 +13,9 @@ export const TestimonialsSection = () => {
   const isVisible = useScroll(ref);
 
   return (
-    <Section id="testimonials" className="bg-(--surface)">
+    <Section id="testimonials" className="py-16 md:py-24 bg-(--surface)">
       <Container>
-        <div className="mb-12 text-center">
+        <div className="mb-8 md:mb-12 text-center">
           <h2 className="heading-section">
             What Clients <span className="heading-section-accent">Say</span>
           </h2>
@@ -24,7 +24,7 @@ export const TestimonialsSection = () => {
         <div
           ref={ref}
           className={clsx(
-            "grid gap-6 md:grid-cols-2",
+            "grid gap-4 sm:gap-6 md:grid-cols-2",
             isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-10",
@@ -35,7 +35,7 @@ export const TestimonialsSection = () => {
             <div
               key={item.id}
               className={clsx(
-                "rounded-2xl bg-white p-6 transition hover:shadow-lg group",
+                "rounded-2xl bg-white dark:bg-slate-800 p-4 sm:p-6 transition hover:shadow-lg group",
                 index === 2 && "md:col-span-2",
               )}
             >
@@ -45,7 +45,7 @@ export const TestimonialsSection = () => {
                 ))}
               </div>
 
-              <p className="text-paragraph">
+              <p className="text-slate-700 dark:text-slate-300">
                 {item.quote}
               </p>
 
@@ -54,10 +54,10 @@ export const TestimonialsSection = () => {
                   {item.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
                     {item.name}
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     {item.role} • {item.company}
                   </p>
                 </div>

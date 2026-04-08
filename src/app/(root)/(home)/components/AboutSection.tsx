@@ -75,16 +75,16 @@ export const AboutSection = () => {
                 return (
                   <div
                     key={item.title}
-                    className="flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-sm transition-all duration-300 hover:shadow-md group"
+                    className="flex items-center gap-3 rounded-xl bg-white dark:bg-slate-800 px-4 py-3 shadow-sm transition-all duration-300 hover:shadow-md group"
                   >
                     <div className="flex h-8 w-8 items-center justify-center rounded-md bg-emerald-100 text-emerald-600 transition-all duration-300 group-hover:bg-emerald-600 group-hover:text-white">
                       <Icon size={16} />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900">
+                      <p className="text-sm font-semibold text-slate-900 dark:text-white">
                         {item.title}
                       </p>
-                      <p className="text-xs text-slate-500">{item.desc}</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">{item.desc}</p>
                     </div>
                   </div>
                 );

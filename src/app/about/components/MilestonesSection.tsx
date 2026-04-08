@@ -37,10 +37,10 @@ const milestones = [
 
 export const MilestonesSection = () => {
   return (
-    <section className="bg-[#f8fafc] dark:bg-[#020617] py-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="bg-[#f8fafc] dark:bg-[#020617] py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ================= TITLE ================= */}
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-8 md:mb-16 max-w-3xl text-center md:text-left">
           <h2 className="heading-main leading-[1.1]">
             7 Years
             <br />
@@ -52,13 +52,13 @@ export const MilestonesSection = () => {
         </div>
 
         {/* ================= GRID ================= */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid gap-8 md:gap-16 lg:grid-cols-2 items-start">
           {/* ================= TIMELINE ================= */}
           <div className="relative">
             {/* Vertical Line */}
             <div className="absolute left-[18px] top-2 bottom-2 w-[4px] btn-gradient" />
 
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               {milestones.map((item, i) => (
                 <div key={i} className="flex gap-5 relative">
                   {/* Dot */}
@@ -67,16 +67,16 @@ export const MilestonesSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="pt-1">
+                  <div className="pt-1 pb-4">
                     <p className="text-sm font-semibold text-emerald-600">
                       {item.year}
                     </p>
 
-                    <h3 className="text-lg font-semibold text-foreground mt-1">
+                    <h3 className="text-base md:text-lg font-semibold text-foreground mt-1">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-(--muted) mt-1 max-w-md leading-relaxed">
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-md leading-relaxed">
                       {item.detail}
                     </p>
                   </div>
@@ -86,14 +86,14 @@ export const MilestonesSection = () => {
           </div>
 
           {/* ================= IMAGE CARD ================= */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
             <div className="relative rounded-3xl overflow-hidden">
               <Image
                 src="/images/about-minlstone.png"
                 alt="growth"
                 width={480}
                 height={600}
-                className="relative z-10 w-[360px] md:w-[420px] lg:w-[480px] h-auto object-cover"
+                className="relative z-10 w-[280px] sm:w-[360px] md:w-[420px] lg:w-[480px] h-auto object-cover"
                 priority
               />
             </div>

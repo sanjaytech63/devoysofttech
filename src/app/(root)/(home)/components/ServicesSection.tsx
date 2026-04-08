@@ -32,15 +32,15 @@ export const ServicesSection = () => {
   const isVisible = useScroll(ref);
 
   return (
-    <Section id="services" className="bg-(--surface)">
+    <Section id="services" className="py-16 md:py-24 bg-(--surface)">
       <Container>
         <div>
-          <div className="mb-12 flex items-center justify-between">
-            <h2 className="heading-section">
+          <div className="mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <h2 className="heading-section text-center sm:text-left">
               Services We <span className="heading-section-accent">Provide</span>
             </h2>
 
-            <Button className="group hidden  md:flex items-center gap-2 btn-gradient btn-cta-text text-sm">
+            <Button className="group hidden sm:flex items-center gap-2 btn-gradient btn-cta-text text-sm self-center sm:self-auto">
               View All Service
               <OptimizedImage
                 src="/images/arrow.svg"
@@ -55,7 +55,7 @@ export const ServicesSection = () => {
           <div
             ref={ref}
             className={clsx(
-              "grid gap-12 sm:grid-cols-2 lg:grid-cols-3",
+              "grid gap-6 sm:grid-cols-2 lg:grid-cols-3",
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8",
@@ -70,8 +70,8 @@ export const ServicesSection = () => {
                   key={service.id}
                   className="
                   rounded-2xl 
-                  bg-white 
-                  p-6 
+                  bg-white dark:bg-slate-800
+                  p-4 sm:p-6 
                   transition 
                   hover:shadow-2xl
                   group 
@@ -89,11 +89,11 @@ export const ServicesSection = () => {
                   >
                     <Icon size={18} />
                   </div>
-                  <h3 className="text-base font-semibold text-slate-900">
+                  <h3 className="text-base font-semibold text-slate-900 dark:text-white">
                     {service.title}
                   </h3>
 
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                     {service.description}
                   </p>
 

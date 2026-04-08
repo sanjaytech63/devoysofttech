@@ -53,7 +53,7 @@ export const TeamSection = () => (
               <p className="text-sm font-semibold text-emerald-700">
                 {member.role}
               </p>
-              <p className="mt-2 text-sm text-(--muted)">{member.bio}</p>
+              <p className="mt-2 text-sm text-(--muted) dark:text-slate-300">{member.bio}</p>
             </div>
           </Card>
         ))}

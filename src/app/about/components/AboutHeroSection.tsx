@@ -11,17 +11,17 @@ export const AboutHeroSection = () => {
   const visible = useScroll(ref);
 
   return (
-    <Section id="about" className="bg-background">
+    <Section id="about" className="bg-background py-16 md:py-24">
       <Container>
         <div
           ref={ref}
           className={clsx(
-            "grid gap-10 lg:grid-cols-2 items-center",
+            "grid gap-8 md:gap-10 lg:grid-cols-2 items-center",
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
             "transition-all duration-700",
           )}
         >
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#0B3D1E] to-[#22C55E] p-6 h-[380px] overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#0B3D1E] to-[#22C55E] p-4 md:p-6 h-[300px] md:h-[380px] overflow-hidden">
             <div className="absolute left-4 top-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-600 shadow">
               7+ Years
             </div>

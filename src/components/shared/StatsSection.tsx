@@ -42,18 +42,18 @@ export const StatsSection = () => {
       className="
        bg-linear-to-r
         from-[#0B3D1E] via-[#14532D] to-[#15803D]
-        py-10
+        py-8 md:py-10
       "
     >
       <Container>
-        <div className="flex itemscenter justify-between">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4">
           {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="stats-label">
+            <div key={stat.label} className="text-center sm:text-left">
+              <p className="stats-label text-2xl sm:text-3xl md:text-4xl">
                 {stat.current}
                 <span className="ml-1 text-lg">+</span>
               </p>
-              <p className="mt-1 text-[10px] uppercase tracking-widest text-(--accent)">
+              <p className="mt-1 text-[10px] sm:text-xs uppercase tracking-widest text-(--accent)">
                 {stat.label}
               </p>
             </div>

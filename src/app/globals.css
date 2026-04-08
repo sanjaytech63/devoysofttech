@@ -41,6 +41,25 @@
   --surface-2: #1e293b;
   --card: #111827;
   --border: #334155;
+
+  /* Dark mode text colors */
+  --muted: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Dark mode color variables */
+  --color-text-primary: #f8fafc;
+  --color-text-paragraph: #94a3b8;
+  --color-text-accent: #22c55e;
+  --color-text-accent-light: #4ade80;
+  --color-text-white: #ffffff;
+
+  /* Dark mode specific colors */
+  --primary: #166534;
+  --primary-dark: #0f4526;
+  --accent: #22c55e;
+  --accent-light: #4ade80;
+  --highlight: #86efac;
+  --warning: #fbbf24;
 }
 
 @theme inline {
