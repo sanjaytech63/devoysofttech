@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import HeroSection from "./components/HeroSection";
-import { AboutHeroSection } from "@/app/about/components/AboutHeroSection";
+import { AboutHeroSection } from "./components/AboutHeroSection";
 
 const StatsSection = dynamic(() =>
   import("@/components/shared/StatsSection").then((mod) => ({
@@ -11,25 +11,25 @@ const StatsSection = dynamic(() =>
 );
 
 const ValuesSection = dynamic(() =>
-  import("@/app/about/components/ValuesSection").then((mod) => ({
+  import("./components/ValuesSection").then((mod) => ({
     default: mod.ValuesSection,
   })),
 );
 
 const DifferentiatorsSection = dynamic(() =>
-  import("@/app/about/components/DifferentiatorsSection").then((mod) => ({
+  import("./components/DifferentiatorsSection").then((mod) => ({
     default: mod.DifferentiatorsSection,
   })),
 );
 
 const MilestonesSection = dynamic(() =>
-  import("@/app/about/components/MilestonesSection").then((mod) => ({
+  import("./components/MilestonesSection").then((mod) => ({
     default: mod.MilestonesSection,
   })),
 );
 
 const TeamSection = dynamic(() =>
-  import("@/app/about/components/TeamSection").then((mod) => ({
+  import("./components/TeamSection").then((mod) => ({
     default: mod.TeamSection,
   })),
 );
