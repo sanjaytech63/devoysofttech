@@ -14,7 +14,7 @@ export const CTASection = () => (
           shadow-[0_10px_40px_rgba(0,0,0,0.2)]
         "
       >
-        <h2 className="heading-section text-white">
+        <h2 className="heading-section text-white!">
           Ready to Build something
           <br className="" />
           Extraordinary ?
