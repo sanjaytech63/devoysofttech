@@ -35,11 +35,11 @@ export const TestimonialsSection = () => {
             <div
               key={item.id}
               className={clsx(
-                "rounded-2xl bg-white p-6 transition hover:shadow-md ",
+                "rounded-2xl bg-white p-6 transition hover:shadow-lg group",
                 index === 2 && "md:col-span-2",
               )}
             >
-              <div className="mb-3 flex gap-1 text-yellow-400">
+              <div className="mb-3 flex gap-1 text-yellow-400 transition-all duration-300 group-hover:scale-110">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={16} fill="currentColor" />
                 ))}
@@ -50,7 +50,7 @@ export const TestimonialsSection = () => {
               </p>
 
               <div className="mt-4 flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-xs font-bold text-white">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-xs font-bold text-white transition-all duration-300 group-hover:bg-emerald-600 group-hover:scale-110">
                   {item.name.charAt(0)}
                 </div>
                 <div>

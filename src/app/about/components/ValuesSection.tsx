@@ -64,8 +64,8 @@ export const ValuesSection = () => {
           {values?.map((value) => {
             const Icon = value.icon;
             return (
-              <Card key={value.title} className="border-emerald-100">
-                <div className="mb-4 hover:bg-[#166534] hover:text-white inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-(--accent)">
+              <Card key={value.title} className="border-emerald-100 group">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-(--accent) transition-all duration-300 group-hover:bg-[#166534] group-hover:text-white">
                   <Icon size={20} />
                 </div>
                 <h3 className="text-lg font-bold text-foreground nav-link">

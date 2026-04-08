@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { useScroll } from "@/hooks/useScroll";
 import { MessageSquare, FileText, Code2, Headphones } from "lucide-react";
 import clsx from "clsx";
+import { OptimizedImage } from "@/components/shared/OptimizedImage";
+import Image from "next/image";
 
 const features = [
   {
@@ -45,34 +47,27 @@ export const AboutSection = () => {
             "transition-all duration-700",
           )}
         >
-          <div className="relative rounded-3xl hover:scale-105 duration-300 transition-transform bg-linear-to-br from-[#0B3D1E] to-[#22C55E] p-6 h-95 overflow-hidden">
-            <div className="absolute left-4 top-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-600 shadow">
-              7+ Years
-            </div>
-
-            <div className="absolute bottom-4 right-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-600 shadow">
-              200+ Projects
-            </div>
-
-            <div className="flex h-full items-center justify-center">
-              <div className="text-center text-white">
-                <p className="text-6xl font-black opacity-20">2017</p>
-                <p className="text-xs opacity-80">Est. Jaipur, India</p>
-              </div>
-            </div>
-          </div>
+          <Image
+            src="/images/about-hero-img.png"
+            alt="growth"
+            width={480}
+            height={600}
+            className="relative z-10 w-[360px] md:w-[420px] lg:w-[480px] h-auto object-cover"
+            priority
+          />
 
           <div>
             <h2 className="heading-section">
-              We <span className="heading-section-accent">Grow</span> Your Business
-              Digitally
+              We <span className="heading-section-accent">Grow</span> Your
+              Business Digitally
             </h2>
 
-            <p className="text-paragraph mt-4 max-w-md">
+            <p className="text-paragraph mt-4">
               Devoy Softtech is a creative IT company founded in 2017. We help
               businesses establish and expand their brand in a digital-first
               world — converting leads into loyal clients.
             </p>
+            
 
             <div className="mt-6 space-y-3">
               {features.map((item) => {
@@ -80,9 +75,9 @@ export const AboutSection = () => {
                 return (
                   <div
                     key={item.title}
-                    className="flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-sm"
+                    className="flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-sm transition-all duration-300 hover:shadow-md group"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-md bg-emerald-100 text-emerald-600">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-md bg-emerald-100 text-emerald-600 transition-all duration-300 group-hover:bg-emerald-600 group-hover:text-white">
                       <Icon size={16} />
                     </div>
                     <div>

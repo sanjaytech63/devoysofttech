@@ -42,8 +42,8 @@ export const TeamSection = () => (
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {team?.map((member) => (
-          <Card key={member.name} className="border-emerald-100 p-5">
-            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 text-(--accent)">
+          <Card key={member.name} className="border-emerald-100 p-5 group">
+            <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 text-(--accent) transition-all duration-300 group-hover:bg-(--accent) group-hover:text-white">
               <Users size={20} />
             </div>
             <div>

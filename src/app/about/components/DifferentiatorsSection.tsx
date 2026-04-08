@@ -61,8 +61,8 @@ export const DifferentiatorsSection = () => (
         {differentiators.map((item) => {
           const Icon = item.icon;
           return (
-            <Card key={item.title} className="border-emerald-100">
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-(--accent)">
+            <Card key={item.title} className="border-emerald-100 group">
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-(--accent) transition-all duration-300 group-hover:bg-(--accent) group-hover:text-white">
                 <Icon size={20} />
               </div>
               <h3 className="text-base font-semibold text-foreground">
