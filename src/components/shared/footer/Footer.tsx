@@ -35,7 +35,7 @@ export const Footer = () => {
           <div>
             <Logo />
 
-            <p className="mt-4 text-sm text-emerald-100 leading-relaxed">
+            <p className="text-paragraph mt-4 text-emerald-100 leading-relaxed">
               {SITE_CONFIG.description}
             </p>
 

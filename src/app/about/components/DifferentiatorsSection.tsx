@@ -49,10 +49,10 @@ export const DifferentiatorsSection = () => (
   <Section id="different" className="bg-(--surface)">
     <Container>
       <div className="mx-auto mb-12 max-w-3xl text-center">
-        <h2 className="text-3xl font-black text-foreground md:text-5xl">
-          What Makes <span className="text-(--accent)">Us Different</span>
+        <h2 className="heading-section">
+          What Makes <span className="heading-section-accent">Us Different</span>
         </h2>
-        <p className="mt-3 text-sm text-(--muted) md:text-base">
+        <p className="text-paragraph mt-3">
           Deep technology expertise and real business partnership in one team.
         </p>
       </div>

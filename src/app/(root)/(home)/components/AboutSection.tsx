@@ -63,12 +63,12 @@ export const AboutSection = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-black md:text-5xl leading-tight text-foreground">
-              We <span className="text-(--accent)">Grow</span> Your Business
+            <h2 className="heading-section">
+              We <span className="heading-section-accent">Grow</span> Your Business
               Digitally
             </h2>
 
-            <p className="mt-4 text-sm text-slate-600 dark:text-slate-300 max-w-md">
+            <p className="text-paragraph mt-4 max-w-md">
               Devoy Softtech is a creative IT company founded in 2017. We help
               businesses establish and expand their brand in a digital-first
               world — converting leads into loyal clients.

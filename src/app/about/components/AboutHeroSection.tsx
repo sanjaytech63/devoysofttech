@@ -39,20 +39,20 @@ export const AboutHeroSection = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-black md:text-5xl leading-tight text-[var(--foreground)]">
-              We Make Life <span className="text-[var(--accent)]">Better</span>{" "}
+            <h2 className="heading-section leading-tight">
+              We Make Life <span className="heading-section-accent">Better</span>{" "}
               Through Technology
             </h2>
 
-            <p className="mt-4 text-md font-bold text-foreground dark:text-slate-300 max-w-md">
+            <p className="text-paragraph mt-4 max-w-md font-bold">
               Devoy Softech is a product team for hire that makes life better.
             </p>
-            <p className="mt-4 text-sm text-(--muted) max-w-md">
+            <p className="text-paragraph mt-4 max-w-md">
               Devoy Softech is a creative IT company founded in 2017. We help
               businesses establish and expand their brand in a digital-first
               world — converting leads into loyal clients.
             </p>
-            <p className="mt-4 text-sm text-(--muted) max-w-md">
+            <p className="text-paragraph mt-4 max-w-md">
               Every project we take on becomes a personal mission. We do not
               just write code — we solve problems, remove friction, and create
               experiences that convert potential leads into loyal clients.

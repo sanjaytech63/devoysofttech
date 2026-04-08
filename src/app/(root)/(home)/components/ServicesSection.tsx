@@ -36,11 +36,11 @@ export const ServicesSection = () => {
       <Container>
         <div>
           <div className="mb-12 flex items-center justify-between">
-            <h2 className="text-3xl font-black md:text-4xl text-foreground">
-              Services We <span className="text-(--accent)">Provide</span>
+            <h2 className="heading-section">
+              Services We <span className="heading-section-accent">Provide</span>
             </h2>
 
-            <Button className="group hidden  md:flex items-center gap-2 btn-gradient text-sm">
+            <Button className="group hidden  md:flex items-center gap-2 btn-gradient btn-cta-text text-sm">
               View All Service
               <OptimizedImage
                 src="/images/arrow.svg"

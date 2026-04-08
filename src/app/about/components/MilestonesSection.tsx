@@ -41,11 +41,11 @@ export const MilestonesSection = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* ================= TITLE ================= */}
         <div className="mb-16 max-w-3xl">
-          <h2 className="text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-foreground ">
+          <h2 className="heading-main leading-[1.1]">
             7 Years
             <br />
             Of{" "}
-            <span className="text-(--accent)">
+            <span className="heading-section-accent">
               Milestones
             </span>
           </h2>

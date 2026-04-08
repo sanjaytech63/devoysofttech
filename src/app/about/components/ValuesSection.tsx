@@ -51,10 +51,10 @@ export const ValuesSection = () => {
           <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
             What We Stand For
           </p>
-          <h2 className="mt-3 text-3xl font-black text-foreground md:text-5xl">
+          <h2 className="heading-section mt-3">
             Trusted principles that guide every build.
           </h2>
-          <p className="mt-4 text-sm  text-(--muted) md:text-base">
+          <p className="text-paragraph mt-4">
             We blend structure with creativity to deliver premium digital
             experiences.
           </p>
@@ -68,10 +68,10 @@ export const ValuesSection = () => {
                 <div className="mb-4 hover:bg-[#166534] hover:text-white inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-(--accent)">
                   <Icon size={20} />
                 </div>
-                <h3 className="text-lg font-bold text-foreground">
+                <h3 className="text-lg font-bold text-foreground nav-link">
                   {value.title}
                 </h3>
-                <p className="mt-2 text-sm  text-(--muted)">{value.subtitle}</p>
+                <p className="mt-2 text-sm text-(--muted)">{value.subtitle}</p>
               </Card>
             );
           })}

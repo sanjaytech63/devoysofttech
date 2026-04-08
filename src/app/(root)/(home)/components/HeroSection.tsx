@@ -11,7 +11,7 @@ export const HeroSection = () => {
     <Section id="home" className="relative overflow-hidden">
       <Container className="relative z-10">
         <div className={`max-w-3xl space-y-6 transition-all duration-700`}>
-          <h1 className="text-4xl font-black leading-tight text-foreground md:text-6xl">
+          <h1 className="heading-main md:text-6xl">
             We <span className="text-gradient-green">Build</span>
             <br />
             <span className="text-gradient-green">Digital</span>
@@ -19,7 +19,7 @@ export const HeroSection = () => {
             Products That <br /> Grow Businesses
           </h1>
 
-          <p className="text-base text-(--muted) leading-relaxed">
+          <p className="text-paragraph">
             Custom Web & Mobile Solutions That Convert Leads Into Clients —
             Designed With Precision, Built With Passion, Since 2017.
           </p>

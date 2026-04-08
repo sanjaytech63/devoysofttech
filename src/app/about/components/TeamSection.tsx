@@ -32,10 +32,10 @@ export const TeamSection = () => (
   <Section id="team" className="bg-(--surface)">
     <Container>
       <div className="mx-auto mb-12 max-w-3xl text-center">
-        <h2 className="text-3xl font-black text-foreground md:text-5xl">
+        <h2 className="heading-section">
           The People Behind Every Build
         </h2>
-        <p className="mt-3 text-sm text-(--muted) md:text-base">
+        <p className="text-paragraph mt-3">
           A multidisciplinary team powering your product journey.
         </p>
       </div>

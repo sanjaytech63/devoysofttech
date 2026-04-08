@@ -16,8 +16,8 @@ export const TestimonialsSection = () => {
     <Section id="testimonials" className="bg-(--surface)">
       <Container>
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-black md:text-5xl text-foreground">
-            What Clients <span className="text-(--accent)">Say</span>
+          <h2 className="heading-section">
+            What Clients <span className="heading-section-accent">Say</span>
           </h2>
         </div>
 
@@ -45,7 +45,7 @@ export const TestimonialsSection = () => {
                 ))}
               </div>
 
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-paragraph">
                 {item.quote}
               </p>
 

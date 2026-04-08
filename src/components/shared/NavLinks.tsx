@@ -23,10 +23,10 @@ export const NavLinks = ({ links, pathname, onClick }: NavLinksProps) => {
           >
             <span
               className={clsx(
-                "text-sm font-medium transition",
+                "nav-link transition",
                 isActive
                   ? "text-(--accent)"
-                  : "text-foreground group-hover:text-(--accent)",
+                  : "group-hover:text-(--accent)",
               )}
             >
               {link.label}

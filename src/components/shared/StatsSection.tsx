@@ -49,11 +49,11 @@ export const StatsSection = () => {
         <div className="flex itemscenter justify-between">
           {stats.map((stat) => (
             <div key={stat.label}>
-              <p className="text-3xl font-extrabold text-(--accent) md:text-4xl">
+              <p className="stats-label">
                 {stat.current}
                 <span className="ml-1 text-lg">+</span>
               </p>
-              <p className="mt-1 text-[10px] uppercase tracking-widest text-(--muted)">
+              <p className="mt-1 text-[10px] uppercase tracking-widest text-(--accent)">
                 {stat.label}
               </p>
             </div>

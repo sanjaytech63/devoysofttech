@@ -14,13 +14,13 @@ export const CTASection = () => (
           shadow-[0_10px_40px_rgba(0,0,0,0.2)]
         "
       >
-        <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">
+        <h2 className="heading-section text-white">
           Ready to Build something
           <br className="" />
           Extraordinary ?
         </h2>
 
-        <p className="mx-auto mt-4 max-w-2xl text-sm text-emerald-100 sm:text-base">
+        <p className="text-paragraph mx-auto mt-4 max-w-2xl text-emerald-100">
           Tell Us About Your Project - We’ll Get Back Within 24 Hours.
         </p>
 
