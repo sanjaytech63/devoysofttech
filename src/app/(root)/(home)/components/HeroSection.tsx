@@ -66,7 +66,7 @@ export const HeroSection = () => {
         </div>
       </Container>
 
-      <div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
+      <div className="pointer-events-none absolute inset-0 z-0">
         <Image
           src="/images/home-hero-bg.png"
           alt="home-hero-bg"
