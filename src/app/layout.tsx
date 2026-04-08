@@ -14,7 +14,7 @@ const manrope = Manrope({
 export const syne = Syne({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-syne", // Optional: for Tailwind or CSS variables
+  variable: "--font-syne", 
 });
 
 export const metadata: Metadata = {
