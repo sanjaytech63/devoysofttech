@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import HeroSection from "./components/HeroSection";
 import { AboutHeroSection } from "./components/AboutHeroSection";
+import { differentiators, values } from "@/lib/constants";
 
 const StatsSection = dynamic(() =>
   import("@/components/shared/StatsSection").then((mod) => ({
@@ -10,15 +11,9 @@ const StatsSection = dynamic(() =>
   })),
 );
 
-const ValuesSection = dynamic(() =>
-  import("./components/ValuesSection").then((mod) => ({
-    default: mod.ValuesSection,
-  })),
-);
-
-const DifferentiatorsSection = dynamic(() =>
-  import("./components/DifferentiatorsSection").then((mod) => ({
-    default: mod.DifferentiatorsSection,
+const FeatureGridSection = dynamic(() =>
+  import("@/components/shared/FeatureGridSection").then((mod) => ({
+    default: mod.FeatureGridSection,
   })),
 );
 
@@ -46,8 +41,19 @@ export default function AboutPage() {
       <HeroSection />
       <AboutHeroSection />
       <StatsSection />
-      <ValuesSection />
-      <DifferentiatorsSection />
+      <FeatureGridSection
+        title="What We Stand For"
+        items={values}
+        variant="default"
+        columns={3}
+      />
+      <FeatureGridSection
+        title="What Makes Us"
+        items={differentiators}
+        accent="Different"
+        variant="soft"
+        columns={4}
+      />
       <MilestonesSection />
       <TeamSection />
       <CTASection

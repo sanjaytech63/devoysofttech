@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { Logo } from "../Logo";
 import { OptimizedImage } from "../OptimizedImage";
-
-import { FooterConfig } from "@/types/footer";
 import { FooterSection } from "./FooterSection";
+import { FooterConfig } from "@/types";
 
 export const SITE_CONFIG: FooterConfig = {
   name: "Devoy",

@@ -6,7 +6,7 @@ import { Navbar } from "@/components/shared/navbar/Navbar";
 import { Footer } from "@/components/shared/footer/Footer";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -17,7 +17,7 @@ const manrope = Manrope({
 export const syne = Syne({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-syne", 
+  variable: "--font-syne",
 });
 
 export const metadata: Metadata = {
@@ -49,10 +49,42 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("h-full", "antialiased", manrope.variable, syne.variable, "font-sans", geist.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        manrope.variable,
+        syne.variable,
+        "font-sans",
+        geist.variable,
+      )}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          (function () {
+            try {
+              var theme = localStorage.getItem("theme");
+              var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+              
+              if (theme === "dark" || (!theme && systemDark)) {
+                document.documentElement.classList.add("dark");
+              } else {
+                document.documentElement.classList.remove("dark");
+              }
+            } catch (e) {}
+          })();
+        `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Navbar />
           <main id="main">{children}</main>
           <Footer />

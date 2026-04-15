@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/Button";
 
 import { NavLinks } from "../NavLinks";
 import { MobileDrawer } from "./MobileDrawer";
-import { NavLink } from "@/types/navigation";
 import { Logo } from "../Logo";
 import { OptimizedImage } from "../OptimizedImage";
+import { NavLink } from "@/types";
 
 const links: NavLink[] = [
   { label: "Home", href: "/" },

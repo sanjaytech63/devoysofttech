@@ -1,23 +1,27 @@
 "use client";
 
+import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
 
 export const ThemeToggle = () => {
   const { theme, resolvedTheme, setTheme } = useTheme();
 
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   const activeTheme = theme === "system" ? resolvedTheme : theme;
   const isDark = activeTheme === "dark";
 
   return (
     <button
-      type="button"
-      aria-label="Toggle theme"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      style={{
-        border: "0.574px solid #C0DCCA",
-      }}
-      className="border rounded-full cursor-pointer p-1 md:p-1.5 border-slate-200 dark:border-slate-700"
+      className="border rounded-full p-2 border-slate-200  cursor-pointer dark:border-slate-700"
     >
       {isDark ? (
         <Sun
@@ -30,8 +34,6 @@ export const ThemeToggle = () => {
           className="text-[#22C55E] transition-transform duration-300"
         />
       )}
-
-      <span className="sr-only">Toggle theme</span>
     </button>
   );
 };

@@ -47,7 +47,7 @@ export function OptimizedImage({
             : undefined
         }
         className={clsx(
-          fill ,
+          fill,
           "transition-transform duration-500 ease-out",
           fill,
           className,

@@ -1,7 +1,17 @@
-import React from "react";
+"use client";
 
-const page = () => {
-  return <div>page</div>;
-};
+import { FAQSection } from "@/components/shared/FAQSection";
+import { FeatureSection } from "./components/FeatureSection";
+import HeroSection from "./components/HeroSection";
+import { TechStackSection } from "./components/TechStackSection";
 
-export default page;
+export default function ServicePage() {
+  return (
+    <main className="min-h-screen text-slate-900 dark:text-slate-100">
+      <HeroSection />
+      <FeatureSection />
+      <TechStackSection />
+      <FAQSection />
+    </main>
+  );
+}
