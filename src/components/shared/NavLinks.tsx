@@ -1,6 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
-import { NavLink } from "@/types/navigation";
+import { NavLink } from "@/types";
 
 type NavLinksProps = {
   links: NavLink[];
