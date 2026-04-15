@@ -23,12 +23,12 @@ export const ServicesTicker = () => {
   return (
     <section className="bg-white dark:bg-[#111827] overflow-hidden">
       <Container>
-        <div className="relative py-4">
+        <div className="relative py-6">
           <div className="flex w-max animate-marquee gap-8">
             {[...items, ...items].map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300"
+                className="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300"
               >
                 <span className="h-1 w-1 rounded-full bg-(--accent)" />
                 <span className="hover:text-(--accent) transition">{item}</span>

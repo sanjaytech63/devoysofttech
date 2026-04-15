@@ -2,8 +2,6 @@
 
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { useRef } from "react";
-import { useScroll } from "@/hooks/useScroll";
 import { MessageSquare, FileText, Code2, Headphones } from "lucide-react";
 import clsx from "clsx";
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
@@ -32,20 +30,10 @@ const features = [
 ];
 
 export const AboutSection = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const visible = useScroll(ref);
-
   return (
     <Section id="about" className="bg-background">
       <Container>
-        <div
-          ref={ref}
-          className={clsx(
-            "grid gap-10 lg:grid-cols-2 items-center",
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
-            "transition-all duration-700",
-          )}
-        >
+        <div className={clsx("grid gap-10 lg:grid-cols-2 items-center")}>
           <OptimizedImage
             src="/images/about-hero-img.png"
             alt="growth"
