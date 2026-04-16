@@ -35,6 +35,7 @@ export const HeroSection = () => {
                 fill={false}
                 containerClassName="w-7! h-7! transition-transform duration-300 group-hover:rotate-30"
                 priority
+                blurDataURL="/images/arrow.svg"
               />
             </Button>
 
@@ -74,7 +75,7 @@ export const HeroSection = () => {
           priority
           quality={75}
           placeholder="blur"
-          blurDataURL="/images/bluer-image.png"
+          blurDataURL="/images/home-hero-bg.png"
           sizes="100vw"
           className="object-cover object-center"
         />
@@ -86,7 +87,7 @@ export const HeroSection = () => {
           priority
           quality={75}
           placeholder="blur"
-          blurDataURL="/images/bluer-image.png"
+          blurDataURL="/images/home-hero-img.png"
           sizes="100vw"
           className="object-cover object-center-bottom mix-blend-multiply"
         />

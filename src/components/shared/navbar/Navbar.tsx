@@ -51,6 +51,7 @@ export const Navbar = () => {
                 fill={false}
                 containerClassName="w-6! h-6! transition-transform duration-300 group-hover:rotate-30"
                 priority
+                blurDataURL="/images/arrow.svg"
               />
             </Button>
 
@@ -94,6 +95,7 @@ export const Navbar = () => {
             fill={false}
             containerClassName="w-7! h-7! transition-transform duration-300 group-hover:rotate-30"
             priority
+            blurDataURL="/images/arrow.svg"
           />
         </Button>
       </MobileDrawer>

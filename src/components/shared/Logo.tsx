@@ -7,8 +7,9 @@ export const Logo = () => (
       src={"/images/logo.png"}
       alt="Logo"
       fill={false}
-      containerClassName="w-[140px] h-auto relative"
+      containerClassName="w-[140px] h-auto relative overflow-hidden"
       priority
+      blurDataURL="/images/logo.png"
     />
   </Link>
 );

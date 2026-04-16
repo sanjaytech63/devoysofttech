@@ -10,6 +10,7 @@ type OptimizedImageProps = {
   className?: string;
   containerClassName?: string;
   fill?: boolean;
+  blurDataURL?: string;
 };
 
 export function OptimizedImage({
@@ -19,6 +20,7 @@ export function OptimizedImage({
   className,
   containerClassName,
   fill = true,
+  blurDataURL,
 }: OptimizedImageProps) {
   return (
     <div
@@ -37,7 +39,7 @@ export function OptimizedImage({
         priority={priority}
         quality={75}
         placeholder="blur"
-        blurDataURL="/images/bluer-image.png"
+        blurDataURL={blurDataURL || "/images/bluer-image.png"}
         sizes={
           fill
             ? `(max-width: 640px) 100vw,
