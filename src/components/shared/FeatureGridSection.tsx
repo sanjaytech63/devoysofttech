@@ -24,9 +24,9 @@ export const FeatureGridSection = ({
   return (
     <Section
       id="FeatureGridSection"
-      className={variant === "default" ? "bg-(--surface)" : "bg-white"}
+      className={variant === "default" ? "bg-(--surface)" : "bg-transparent"}
     >
-      <Container>
+      <Container className="px-0!">
         {/* HEADER */}
         <div className="flex items-center justify-between mb-12 flex-wrap gap-4">
           <h2 className="heading-section leading-tight">

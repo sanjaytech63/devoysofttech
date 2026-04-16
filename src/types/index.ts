@@ -1,4 +1,5 @@
 import { LucideIcon } from "lucide-react";
+import { IconType } from "react-icons";
 
 export type NavLink = {
   label: string;
@@ -33,12 +34,13 @@ export type FeatureItem = {
   image: string;
   tags: string[];
   cta: string;
+  items: FeatureGridItem[];
 };
 
 export type FeatureGridItem = {
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: LucideIcon | IconType;
 };
 
 export type FeatureGridSectionProps = {
