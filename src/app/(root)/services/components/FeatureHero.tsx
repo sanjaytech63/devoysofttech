@@ -38,7 +38,7 @@ export const FeatureHero = ({ data }: FeatureHeroProps) => {
       </div>
 
       <div className="flex justify-end items-center w-full">
-        <div className="relative w-full h-110">
+        <div className="relative w-140 h-150">
           <OptimizedImage
             src={data.image}
             alt={data.label}

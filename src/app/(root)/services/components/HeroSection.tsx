@@ -10,16 +10,15 @@ export default function HeroSection() {
       <Container className="relative z-10">
         <div>
           <h1 className="heading-section leading-tight">
-            <span className="text-foreground">Full Stack</span>
+            <span className="text-foreground">Full Stack</span>  <span className="heading-section-accent">Digital </span>
+            
             <br />
-            <span className="heading-section-accent">Digital Services</span>
-            <br />
-            <span className="text-foreground">Under One Roof</span>
+             <span className="heading-section-accent">Services</span>  <span className="text-foreground">Under One Roof</span>
           </h1>
 
           <p className="text-paragraph mt-4 md:mt-6 leading-relaxed max-w-2xl ">
             From idea to launch — web, mobile, design, marketing, and everything
-            <br /> in between.
+           in between.
           </p>
         </div>
       </Container>

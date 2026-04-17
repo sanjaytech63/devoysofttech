@@ -46,19 +46,15 @@ export const HeroSection = () => {
 
           <div className="flex items-center gap-6 pt-4 text-sm text-slate-700">
             <div>
-              <p className="text-3xl font-extrabold text-foreground md:text-4xl">
-                7+
-              </p>
+              <p className="stats-label text-foreground! md:text-4xl!">7+</p>
               <p className="text-xs dark:text-slate-300">Years Active</p>
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-foreground md:text-4xl">
-                200+
-              </p>
+              <p className="stats-label text-foreground! md:text-4xl!">200+</p>
               <p className="text-xs dark:text-slate-300">Projects Done</p>
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-foreground md:text-4xl">
+              <p className="stats-label text-foreground! md:text-4xl!">
                 4.9<span className="text-[25px]">★</span>
               </p>
               <p className="text-xs dark:text-slate-300">Avg Rating</p>
