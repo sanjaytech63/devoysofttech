@@ -73,3 +73,26 @@ export type FAQItemType = {
   question: string;
   answer: string;
 };
+
+export type ServiceType =
+  | "Website"
+  | "E-commerce"
+  | "Mobile App"
+  | "Design"
+  | "SEO"
+  | "Hire Developer";
+
+export type BudgetType = "10k-30k" | "30k-1L" | "1L-5L" | "5L+";
+
+export interface BriefFormValues {
+  service?: ServiceType;
+  budget?: BudgetType;
+
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  timeline?: string;
+  description: string;
+}

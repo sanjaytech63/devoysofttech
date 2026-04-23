@@ -4,6 +4,7 @@ import { FAQSection } from "@/components/shared/FAQSection";
 import { FeatureSection } from "./components/FeatureSection";
 import HeroSection from "./components/HeroSection";
 import { TechStackSection } from "./components/TechStackSection";
+import { FAQS } from "@/lib/constants";
 
 export default function ServicePage() {
   return (
@@ -11,7 +12,7 @@ export default function ServicePage() {
       <HeroSection />
       <FeatureSection />
       <TechStackSection />
-      <FAQSection />
+      <FAQSection faqs={FAQS} title="Common" highlight="Question" />
     </main>
   );
 }

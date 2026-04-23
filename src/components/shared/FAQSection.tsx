@@ -3,22 +3,35 @@
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { FAQItem } from "./FAQItem";
-import { FAQS } from "@/lib/constants";
 
-export const FAQSection = () => {
+interface FAQSectionProps {
+  faqs: {
+    id: string;
+    question: string;
+    answer: string;
+  }[];
+  title?: string;
+  highlight?: string;
+  className?: string;
+}
+
+export const FAQSection = ({
+  faqs,
+  title = "Common",
+  highlight = "Questions",
+  className = "",
+}: FAQSectionProps) => {
   return (
-    <Section id="faq">
+    <Section id="faq" className={className}>
       <Container>
-        {/* HEADING */}
-        <div className="max-w-5xl mx-auto  mb-12">
+        <div className="max-w-5xl mx-auto mb-12">
           <h2 className="heading-section">
-            Common <span className="heading-section-accent">Question</span>
+            {title} <span className="heading-section-accent">{highlight}</span>
           </h2>
         </div>
 
-        {/* GRID */}
         <div className="max-w-5xl mx-auto space-y-4">
-          {FAQS.map((item) => (
+          {faqs.map((item) => (
             <FAQItem key={item.id} item={item} />
           ))}
         </div>

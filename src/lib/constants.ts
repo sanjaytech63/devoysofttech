@@ -216,3 +216,33 @@ export const FAQS: FAQItemType[] = [
     answer: "Contact support or request deletion from account settings.",
   },
 ];
+
+export const CONTACT_FAQS: FAQItemType[] = [
+  {
+    id: "1",
+    question: "How quickly do you respond to new inquiries?",
+    answer:
+      "Go to login → click 'Forgot password' → follow email instructions.",
+  },
+  {
+    id: "2",
+    question: "Do you sign NDAs before discussing project details?",
+    answer: "Navigate to account settings → billing → update details securely.",
+  },
+  {
+    id: "3",
+    question: "Do you work with international clients?",
+    answer: "Use live chat or email support for quick assistance.",
+  },
+  {
+    id: "4",
+    question: "What's your payment structure?",
+    answer: "Contact support or request deletion from account settings.",
+  },
+];
+
+export const STEPS = [
+  { id: 1, title: "Service" },
+  { id: 2, title: "Budget" },
+  { id: 3, title: "Details" },
+];
