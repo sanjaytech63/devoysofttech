@@ -1,4 +1,14 @@
 import { z } from "zod";
+export const SERVICE_VALUES = [
+  "Website",
+  "E-commerce",
+  "Mobile App",
+  "Design",
+  "SEO",
+  "Hire Developer",
+] as const;
+
+export const BUDGET_VALUES = ["10k-30k", "30k-1L", "1L-5L", "5L+"] as const;
 
 export const briefSchema = z.object({
   service: z.string().min(1, "Please select a service"),
@@ -25,3 +35,5 @@ export const briefSchema = z.object({
 });
 
 export type BriefFormValues = z.infer<typeof briefSchema>;
+export type BudgetType = (typeof BUDGET_VALUES)[number];
+export type ServiceType = (typeof SERVICE_VALUES)[number];

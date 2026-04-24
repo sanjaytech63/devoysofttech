@@ -5,21 +5,22 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Stepper } from "./Stepper";
-import { BriefFormValues } from "@/types";
-import { briefSchema } from "@/schema/schema";
+import { BriefFormValues, briefSchema } from "@/schema/schema";
 import StepService from "./StepService";
 import StepBudget from "./StepBudget";
 import StepDetails from "./StepDetails";
 
+type Step = 1 | 2 | 3;
+
 export default function BriefForm() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState<Step>(1);
 
   const form = useForm<BriefFormValues>({
     resolver: zodResolver(briefSchema),
     mode: "onChange",
     defaultValues: {
-      // service: "",
-      // budget: "",
+      service: undefined,
+      budget: undefined,
       firstName: "",
       lastName: "",
       email: "",
@@ -36,10 +37,12 @@ export default function BriefForm() {
 
     const valid = await form.trigger(fields);
 
-    if (valid) setStep((s) => s + 1);
+    if (!valid) return;
+
+    setStep((s) => (s < 3 ? ((s + 1) as Step) : s));
   };
 
-  const back = () => setStep((s) => s - 1);
+  const back = () => setStep((s) => (s > 1 ? ((s - 1) as Step) : s));
 
   const onSubmit: SubmitHandler<BriefFormValues> = (data) => {
     console.log(data);

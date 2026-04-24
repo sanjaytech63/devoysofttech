@@ -1,7 +1,7 @@
 import { Input } from "@/components/shared/Input";
 import { BackButton } from "@/components/ui/BackButton";
 import { Button } from "@/components/ui/Button";
-import { BriefFormValues } from "@/types";
+import { BriefFormValues } from "@/schema/schema";
 import { UseFormReturn } from "react-hook-form";
 
 export default function StepDetails({
@@ -11,8 +11,10 @@ export default function StepDetails({
   form: UseFormReturn<BriefFormValues>;
   back: () => void;
 }) {
-  const { register, formState } = form;
-  const { errors } = formState;
+  const {
+    register,
+    formState: { errors },
+  } = form;
 
   return (
     <>
@@ -61,20 +63,19 @@ export default function StepDetails({
         <textarea
           {...register("description")}
           placeholder="Project description"
-          className="w-full p-3 border border-slate-300 rounded-sm focus:ring-2 focus:ring-green-200 focus:outline-none h-32"
+          className="w-full p-3 border border-slate-300 rounded-sm focus:ring-2 focus:ring-green-200 outline-none h-32"
         />
         {errors.description && (
-          <p className="text-red-500 text-sm">
-            {errors.description.message as string}
-          </p>
+          <p className="text-red-500 text-sm">{errors.description.message}</p>
         )}
       </div>
 
       <div className="flex justify-between mt-8">
         <BackButton onClick={back} />
+
         <Button
           type="submit"
-          className="group hidden! md:flex! items-center btn-gradient"
+          className="group hidden md:flex items-center btn-gradient"
         >
           Submit
         </Button>

@@ -1,10 +1,8 @@
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { BackButton } from "@/components/ui/BackButton";
 import { Button } from "@/components/ui/Button";
-import { BriefFormValues } from "@/types";
+import { BriefFormValues, BUDGET_VALUES, BudgetType } from "@/schema/schema";
 import { UseFormReturn } from "react-hook-form";
-
-const BUDGETS = ["10k-30k", "30k-1L", "1L-5L"];
 
 export default function StepBudget({
   form,
@@ -19,31 +17,37 @@ export default function StepBudget({
 
   return (
     <>
-      <h2 className="text-2xl font-bold mb-6">Whats your budget?</h2>
+      <h2 className="text-2xl font-bold mb-6">What’s your budget?</h2>
 
       <div className="grid md:grid-cols-2 gap-4">
-        {BUDGETS &&
-          BUDGETS?.map((b: string) => (
-            <button
-              key={b}
-              type="button"
-              onClick={() => form.setValue("budget", b)}
-              className={`p-5 rounded-xl border text-left transition
+        {BUDGET_VALUES.map((b: BudgetType) => (
+          <button
+            key={b}
+            type="button"
+            onClick={() =>
+              form.setValue("budget", b, {
+                shouldValidate: true,
+                shouldDirty: true,
+              })
+            }
+            className={`p-5 rounded-xl border text-left transition
               ${
                 selected === b
                   ? "bg-green-600 text-white border-green-600 shadow-md"
                   : "bg-green-50 hover:bg-green-100 border-green-100"
               }`}
-            >
-              {b}
-            </button>
-          ))}
+          >
+            {b}
+          </button>
+        ))}
       </div>
 
       <div className="flex justify-between mt-10">
         <BackButton onClick={back} />
+
         <Button
           onClick={next}
+          disabled={!selected}
           className="group hidden! md:flex! items-center btn-gradient"
         >
           Next

@@ -1,5 +1,6 @@
 import { OptimizedImage } from "@/components/shared/OptimizedImage";
 import { Button } from "@/components/ui/Button";
+import { BriefFormValues } from "@/schema/schema";
 import {
   Code,
   ShoppingCart,
@@ -8,6 +9,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import { UseFormReturn } from "react-hook-form";
 
 const SERVICES = [
   { label: "Website", icon: Code },
@@ -18,7 +20,13 @@ const SERVICES = [
   { label: "Hire Developer", icon: Users },
 ];
 
-export default function StepService({ form, next }: any) {
+export default function StepService({
+  form,
+  next,
+}: {
+  form: UseFormReturn<BriefFormValues>;
+  next: () => void;
+}) {
   const selected = form.watch("service");
 
   return (
