@@ -44,7 +44,6 @@ export default function StepService({
               aria-label={item.label}
               onClick={() => form.setValue("service", item.label)}
               className={`flex flex-col cursor-pointer items-center justify-center gap-2 p-4 rounded-xl border transition-all
-              
               ${
                 isActive
                   ? "bg-green-600 text-white border-green-600 shadow-md"
