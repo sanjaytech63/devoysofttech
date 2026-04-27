@@ -96,3 +96,23 @@ export interface BriefFormValues {
   timeline?: string;
   description: string;
 }
+
+export type Category =
+  | "all"
+  | "web"
+  | "mobile"
+  | "ecommerce"
+  | "design"
+  | "seo";
+
+export interface PortfolioItem {
+  id: string;
+  title: string;
+  description: string;
+  year: number;
+  rating: number;
+  categories: Category[];
+  tags: string[];
+  image: string;
+  icon: LucideIcon;
+}

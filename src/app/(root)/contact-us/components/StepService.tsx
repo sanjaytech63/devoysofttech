@@ -65,6 +65,7 @@ export default function StepService({
       <div className="flex justify-end mt-8">
         <Button
           onClick={next}
+          disabled={!selected}
           className="group hidden! md:flex! items-center btn-gradient"
         >
           Next Budget
